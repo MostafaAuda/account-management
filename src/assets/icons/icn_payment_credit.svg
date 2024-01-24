@@ -1,0 +1,8 @@
+<svg id="icn_payment_credit" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <circle id="Ellipse_1439" data-name="Ellipse 1439" cx="15" cy="15" r="15" fill="#f7f7f7" opacity="0.099"/>
+  <g id="clock" transform="translate(-166.001 -182.255)">
+    <path id="Vector" d="M15.425,7.713A7.713,7.713,0,1,1,7.713,0,7.715,7.715,0,0,1,15.425,7.713Z" transform="translate(173.542 189.542)" fill="none" stroke="#f7f7f7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <path id="Vector-2" data-name="Vector" d="M3.147,5.915.756,4.489A1.708,1.708,0,0,1,0,3.162V0" transform="translate(180.97 193.792)" fill="rgba(0,0,0,0)" stroke="#f7f7f7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" opacity="0.4"/>
+    <path id="Vector-3" data-name="Vector" d="M0,0H18.51V18.51H0Z" transform="translate(172 188)" fill="none" opacity="0"/>
+  </g>
+</svg>

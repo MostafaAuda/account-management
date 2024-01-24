@@ -1,0 +1,96 @@
+<ng-container *ngIf="viewState.name == updateInfoStatesName.UpdateUserInfoReadyState;">
+  <app-page-title [title]="'Update personal information'|translate"></app-page-title>
+  <section>
+    <form [formGroup]="personalInformationForm" (ngSubmit)="updateUserInfo(personalInformationForm)"
+      *ngIf="personalInformationForm">
+
+      <!-----------name---------->
+      <div class="form-input-group">
+
+        <label for="username" class="fw-semibold"> {{ "Username" | translate }} </label>
+
+        <input type="text" class="form-control" id="username" placeholder="{{'Enter your name' | translate}}"
+          formControlName="username" autocomplete="username"
+          [ngClass]="{ 'is-invalid': PersonalInfoFormControls['username'].errors}">
+        <small *ngIf="PersonalInfoFormControls['username']?.errors" class="invalid-feedback">
+          <span *ngIf="PersonalInfoFormControls['username']?.errors?.['minlength'] ">
+            {{'Name must be at least 3 characters' | translate}}
+          </span>
+          <span *ngIf="PersonalInfoFormControls['username']?.errors?.['maxlength'] ">
+            {{'Name must not exceed 40 characters' | translate}}
+          </span>
+        </small>
+      </div>
+      <!-----------./name-------->
+
+
+      <!-----------email--------->
+      <div class="form-input-group">
+        <label for="email" class="fw-semibold">{{ "Email address" | translate}}</label>
+
+        <input #phone type="text" id="email" class="form-control" placeholder="{{'Enter your Email' | translate}}"
+          formControlName="email" autocomplete="username"
+          [ngClass]="{ 'is-invalid': PersonalInfoFormControls['email'].errors}">
+        <small *ngIf="PersonalInfoFormControls['email']?.errors" class="invalid-feedback">
+          <span *ngIf="PersonalInfoFormControls['email']?.errors?.['email'] ">
+            {{'Email address is invalid' | translate}}
+          </span>
+        </small>
+      </div>
+      <!----------./email--------->
+
+
+      <!--------phone------------->
+      <div class="form-input-group">
+        <label for="phone" class="fw-semibold">{{ "Phone" | translate}}</label>
+
+        <input type="tel" class="form-control" id="phone" autocomplete="username"
+          placeholder="{{'Enter your mobile' | translate}}" formControlName="phone"
+          [ngClass]="{ 'is-invalid': PersonalInfoFormControls['phone'].errors}">
+        <small *ngIf="PersonalInfoFormControls['phone']?.errors" class="invalid-feedback">
+          <span *ngIf="PersonalInfoFormControls['phone']?.errors?.['pattern'] ">
+            {{'Please provide a valid mobile number' | translate}}
+          </span>
+        </small>
+      </div>
+      <!--------./phone------------->
+
+
+      <!--------birthdate--------->
+      <div class="form-input-group">
+        <label for="birthDate" class="fw-semibold">{{"Birth date" | translate}}</label>
+        <input class="form-control" type="date" name="birthDate" id="birthDate" formControlName="birthDate"
+          max="{{dateToday}}">
+      </div>
+      <!--------./birthdate--------->
+
+
+
+      <div class="button-container">
+        <button class="btn btn--gradient" type="submit" [disabled]="is_submitting || !personalInformationForm.valid">
+          {{ "Save" | translate }}
+        </button>
+        <a class="text-decoration-underline" (click)="cancel()">{{"cancel" | translate}}</a>
+      </div>
+    </form>
+  </section>
+</ng-container>
+
+<ng-container *ngIf="viewState.name == updateInfoStatesName.UpdateUserInfoDisconnectedState;">
+  <app-no-connection></app-no-connection>
+</ng-container>
+
+<ng-container *ngIf="viewState.name == updateInfoStatesName.UpdateUserInfoProcessingState">
+  <ngx-skeleton-loader class="main-heading-skeleton" count="1"></ngx-skeleton-loader>
+  <div class="w-md-50">
+    <div class="row">
+      <div class="col-12" *ngFor="let item of [].constructor(4)">
+        <ngx-skeleton-loader class="subheading-skeleton mt-3" count="1" [theme]="{
+        }"></ngx-skeleton-loader>
+        <ngx-skeleton-loader class="" count="1" [theme]="{
+          'height.px':'45'
+        }"></ngx-skeleton-loader>
+      </div>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="65" height="65" viewBox="0 0 65 65">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.583" y1="-0.284" x2="1.05" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e64747"/>
+      <stop offset="1" stop-color="#1a66ff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.047" y1="-0.637" x2="0.877" y2="0.659" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#c6d3e4"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_34133" data-name="Group 34133" transform="translate(-636 -230.54)">
+    <g id="music4" transform="translate(636 231)">
+      <g id="Group_17090" data-name="Group 17090" transform="translate(0 0)">
+        <g id="Group_17083" data-name="Group 17083">
+          <g id="Group_17082" data-name="Group 17082">
+            <g id="Group_17081" data-name="Group 17081">
+              <g id="Group_17080" data-name="Group 17080">
+                <g id="Group_17079" data-name="Group 17079">
+                  <g id="Group_17078" data-name="Group 17078">
+                    <circle id="Ellipse_1206" data-name="Ellipse 1206" cx="32.5" cy="32.5" r="32.5" transform="translate(0 -0.46)" fill="url(#linear-gradient)"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="Group_17098" data-name="Group 17098" transform="translate(5.907 5.907)" opacity="0.26">
+          <g id="Group_17082-2" data-name="Group 17082" transform="translate(0 0)">
+            <g id="Group_17081-2" data-name="Group 17081">
+              <g id="Group_17080-2" data-name="Group 17080">
+                <g id="Group_17079-2" data-name="Group 17079">
+                  <g id="Group_17078-2" data-name="Group 17078">
+                    <circle id="Ellipse_1206-2" data-name="Ellipse 1206" cx="26.363" cy="26.363" r="26.363" fill="none" stroke="#fff" stroke-width="0.4"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+        <path id="Path_263800" data-name="Path 263800" d="M166.1,144.984q0-1.024-.063-2.032l-14.106-14.109-26.019,8.909-10.092,23.96L131.6,177.419q1,.061,2.014.061A32.493,32.493,0,0,0,166.1,144.984Z" transform="translate(-101.564 -112.941)" fill="none"/>
+        <g id="Group_17084" data-name="Group 17084" transform="translate(7.679 7.679)">
+          <path id="Path_263801" data-name="Path 263801" d="M87.863,63.612a24.251,24.251,0,1,0,24.251,24.251A24.251,24.251,0,0,0,87.863,63.612Z" transform="translate(-63.612 -63.612)" fill="url(#linear-gradient-2)"/>
+        </g>
+        <g id="Group_17085" data-name="Group 17085" transform="translate(31.946 7.679)">
+          <path id="Path_263802" data-name="Path 263802" d="M280.357,87.865a24.251,24.251,0,0,0-24.236-24.251V80.22a7.645,7.645,0,0,1,0,15.291v16.606a24.251,24.251,0,0,0,24.236-24.251Z" transform="translate(-256.121 -63.614)" fill="none"/>
+        </g>
+        <path id="Path_263808" data-name="Path 263808" d="M260.978,153.552,256,158.531v-3.725l3.116-3.116Z" transform="translate(-224.232 -123.576)" fill="none"/>
+        <g id="Group_17097" data-name="Group 17097" transform="translate(1.89 1.89)" opacity="0.46">
+          <g id="Group_17082-3" data-name="Group 17082">
+            <g id="Group_17081-3" data-name="Group 17081">
+              <g id="Group_17080-3" data-name="Group 17080">
+                <g id="Group_17079-3" data-name="Group 17079">
+                  <g id="Group_17078-3" data-name="Group 17078">
+                    <circle id="Ellipse_1206-3" data-name="Ellipse 1206" cx="30.38" cy="30.38" r="30.38" fill="none" stroke="#fff" stroke-width="0.4"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="Group_34073" data-name="Group 34073" transform="translate(657.06 252.06)">
+      <g id="Group_22317" data-name="Group 22317" transform="translate(0)">
+        <path id="Union_4" data-name="Union 4" d="M11.113,22.226a11.121,11.121,0,1,1,9.95-6.161A11.113,11.113,0,0,1,11.113,22.226Z" fill="#24eb80"/>
+      </g>
+      <path id="Vector" d="M-1,.6,1.6,3.2,6.813-2" transform="translate(8.133 10.492)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+    </g>
+  </g>
+</svg>

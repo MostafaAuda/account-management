@@ -1,0 +1,25 @@
+/*--------------inputs----------------*/
+html[dir='rtl'] .form-control.is-valid,
+html[dir='rtl'] .was-validated .form-control:valid,
+html[dir='rtl'] .form-control.is-invalid,
+html[dir='rtl'] .was-validated .form-control:invalid {
+  padding-left: calc(1.5em + 0.75rem);
+  background-position: left calc(0.375em + 0.1875rem) center;
+  padding-right: 0.75rem;
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Media Queries for RTL - LTR */
+
+/* Screen between tablets and large screens */
+@media only screen and (max-width: 1199px) {}
+
+/* All tablets */
+@media only screen and (max-width: 991px) {}
+
+/* All mobile phones */
+@media only screen and (max-width: 767px) {}
+
+/* Galaxy fold phone only */
+@media only screen and (max-width: 319px) {}

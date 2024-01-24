@@ -1,0 +1,66 @@
+.plans-nav {
+  color: var(--twist-primary-light);
+  font-weight: 300;
+  margin-bottom: 24px;
+
+  .plans-nav__tab {
+    display: block;
+    padding-bottom: 2px;
+
+    &:hover {
+      color: var(--twist-primary-light);
+      border-bottom: 2px solid;
+    }
+
+    &.active {
+      font-weight: 500;
+      color: var(--twist-primary-light);
+      border-bottom: 2px solid;
+    }
+  }
+
+
+  /*--------------------------------------------------------------------------------------------------------------------*/
+  /* Media Queries for RTL - LTR */
+
+  /* Screen between tablets and large screens */
+  @media only screen and (max-width: 1199px) {}
+
+  /* All tablets */
+  @media only screen and (max-width: 991px) {}
+
+  /* All mobile phones */
+  @media only screen and (max-width: 767px) {}
+
+  /* Galaxy fold phone only */
+  @media only screen and (max-width: 319px) {}
+}
+
+.bundles-section {
+
+  .custom-margin {
+    margin-bottom: 24px;
+  }
+
+  /*--------------------------------------------------------------------------------------------------------------------*/
+  /* Media Queries for RTL - LTR */
+
+  /* Screen between tablets and large screens */
+  @media only screen and (max-width: 1199px) {}
+
+  /* All tablets */
+  @media only screen and (max-width: 991px) {}
+
+  /* All mobile phones */
+  @media only screen and (max-width: 767px) {}
+
+  /* Galaxy fold phone only */
+  @media only screen and (max-width: 319px) {}
+}
+
+//Custom swiper slide to fit content only
+:host ::ng-deep {
+  .swiper-slide {
+    width: fit-content;
+  }
+}

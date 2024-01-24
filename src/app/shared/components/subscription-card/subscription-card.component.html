@@ -1,0 +1,45 @@
+<div [class]="'subscription-card ' + serviceType">
+
+  <!-- subscription card content starts -->
+  <div class="subscription-card__content">
+    <div>
+      <!-- subscription card content header starts -->
+      <div class="content-header">
+        <h3 class="content-header__title" [class.invisible]="!bundle">{{bundle}}</h3>
+
+        <a [matMenuTriggerFor]="manageMenu" class="content-header__manage-btn">
+          <div class="content-header__manage-btn--icon">
+            <img src="assets/imgs/icn_manage.svg">
+          </div>
+          <span>{{'Manage' | translate}}</span>
+        </a>
+        <mat-menu class="manage-menu" #manageMenu="matMenu" [hasBackdrop]="true"
+          [backdropClass]="'manage-menu__backdrop'">
+          <a mat-menu-item (click)="onViewPlanDetails()"><img src="assets/imgs/icn_view_plan.svg"
+              [alt]="'View Plan Icon' | translate"><span>{{'View plan details' | translate}}</span></a>
+          <a mat-menu-item (click)="onCancelSubscription()"><img src="assets/imgs/icn_cancel_subscription.svg"
+              [alt]="'Cancel Subscription Icon' | translate"><span>{{'Cancel Subscription' | translate}}</span></a>
+        </mat-menu>
+      </div>
+      <!-- subscription card content header ends -->
+
+      <!-- subscription card content details starts -->
+      <div class="content-details">
+        <span [class]="'content-details__type ' + serviceType" [class.invisible]="!serviceType">{{serviceType}}</span>
+        <span class="content-details__price" [class.invisible]="!price">{{price}}</span>
+      </div>
+      <!-- subscription card content details ends -->
+    </div>
+    <!-- subscription card content footer starts -->
+    <div class="content-footer" [class.invisible]="!billingDate">
+      <div class="content-footer__icon">
+        <img src="assets/icons/icn_payment_credit.svg" [alt]="'Payment Icon' | translate">
+      </div>
+      <span class="billing-date">{{'Next Billing Date:' | translate}} {{billingDate | date}}</span>
+    </div>
+    <!-- subscription card content details ends -->
+
+  </div>
+  <!-- subscription card content ends -->
+
+</div>

@@ -1,0 +1,90 @@
+<ng-container [ngSwitch]="viewState.name">
+  <ng-container *ngSwitchCase="PaymentStateName.PaymentStateReady">
+    <app-page-title [title]="'Payment' | translate"></app-page-title>
+
+    <ng-container *ngIf="(viewState | as : PaymentStateReady)?.paymentMethods">
+      <!--------------------------payment-methods-------------------------->
+      <section class="payment-methods">
+        <div class="section-heading-container">
+          <h4 class="section-heading m-0">
+            {{ "Default Payment Method" | translate}}
+          </h4>
+          <a class="heading-container__btn" (click)="onManagePayment()"
+            *ngIf="(viewState | as : PaymentStateReady)?.paymentMethods?.length">
+            <div class="btn__img-container">
+              <img src="assets/icons/icn_manage_payment.svg" [alt]="'manage payment icon' | translate">
+            </div>
+            <span>{{'Manage Payment' | translate}}</span>
+          </a>
+        </div><!--./section-heading-container-->
+
+        <a class="empty-response empty-content" *ngIf="!(viewState | as : PaymentStateReady)?.paymentMethods?.length">
+          <div class="btn__img-container">
+            <img src="assets/icons/icn_add.svg" [alt]="'Add icon' | translate">
+          </div>
+          <span class="mt-2">{{'Add Card' | translate}}</span>
+        </a><!--./empty-content-->
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-12">
+            <app-payment-card-methods class="payment-card-method" [paymentType]="method.paymentType"
+              [phoneOrCardNumber]="method.cardNumber ? method.cardNumber : method.mobileNum"
+              [expiryDate]="method.expirydate" [hideManage]="true"></app-payment-card-methods>
+          </div>
+        </div>
+      </section>
+      <!--------------------------./payment-methods-------------------------->
+    </ng-container>
+
+    <ng-container>
+      <!-----------------------payment-history------------------->
+      <section class="payment-history mt-5">
+        <div class="section-heading-container">
+          <h4 class="section-heading m-0">{{"Payment history" | translate}}</h4>
+        </div><!--./section-heading-container-->
+
+        <div class="empty-response" *ngIf="!(viewState | as : PaymentStateReady)?.paymentHistory?.length">
+          <span>{{'No Payment History' | translate}}</span>
+          <a (click)="goToSubscriptions()">{{'Subscribe Now' | translate}}</a>
+        </div><!--./empty-response-->
+
+        <div class="payment-history-content"
+          *ngFor="let payment of (viewState | as : PaymentStateReady)?.paymentHistory">
+          <app-payment-history-card [cardCategory]="payment?.planName"
+            [phoneOrCardNumber]="payment?.cardNumber ? payment?.cardNumber : payment?.mobileNum"
+            [paymentType]="payment?.paymentType" [subscribed]="payment?.status" [bundleName]="payment?.bundlename"
+            [creationDate]="payment?.creationDate" [planPrice]="payment?.amount"></app-payment-history-card>
+        </div><!--./payment-history-content-->
+      </section>
+      <!-----------------------./payment-history------------------->
+    </ng-container>
+  </ng-container>
+
+
+  <ng-container *ngSwitchCase="PaymentStateName.PaymentStateProcessing">
+    <ngx-skeleton-loader class="main-heading-skeleton" count="1"></ngx-skeleton-loader>
+    <ngx-skeleton-loader class="subheading-skeleton section-padding" count="1"></ngx-skeleton-loader>
+
+    <div class="row">
+      <ngx-skeleton-loader class="col-lg-4 col-md-6 col-12" count="1" [theme]="{
+        'height.px': '150'
+        }"></ngx-skeleton-loader>
+    </div>
+
+    <ngx-skeleton-loader class="subheading-skeleton section-padding" count="1"></ngx-skeleton-loader>
+    <ngx-skeleton-loader class="mt-3" count="1" [theme]="{
+      'height.px': '150'
+      }"></ngx-skeleton-loader>
+    <ngx-skeleton-loader class="mt-3" count="1" [theme]="{
+      'height.px': '150'
+      }"></ngx-skeleton-loader>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="PaymentStateName.PaymentStateDisconnected">
+    <app-no-connection></app-no-connection>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="PaymentStateName.PaymentStateError">
+    <app-try-again (onTryAgain)="onRetry()"></app-try-again>
+  </ng-container>
+</ng-container>

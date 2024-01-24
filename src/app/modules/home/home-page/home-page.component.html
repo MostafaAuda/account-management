@@ -1,0 +1,118 @@
+<ng-container [ngSwitch]="viewState.name">
+
+  <ng-container *ngSwitchCase="HomeStateName.HomeStateReady">
+
+    <!-- User Information Start -->
+    <ng-container>
+      <app-page-title
+        [title]="('Good morning, ' | translate ) + (userInfo.username ? userInfo.username : userInfo.email ? userInfo.email : userInfo.phone)"></app-page-title>
+
+      <section class="personal-information">
+        <h4 class="section-heading">{{'Personal information' | translate}}</h4>
+        <div class="personal-information__user">
+          <div class="personal-information__grid">
+
+            <div class="d-flex">
+              <div class="personal-information__user-item">
+                <div class="user-item__img">
+                  <img src="assets/imgs/icn_email_address_home.svg" [alt]="'E-mail Address icon' | translate">
+                </div>
+
+                <div class="user-item__details">
+                  <h6>{{'Email Address' | translate}}</h6>
+                  <span>{{userInfo.email ? userInfo.email : '-'}}</span>
+                </div>
+              </div>
+
+              <div class="vertical-line"></div>
+            </div>
+
+            <div class="d-flex">
+              <div class="personal-information__user-item">
+                <div class="user-item__img">
+                  <img src="assets/imgs/icn_mobile_number_home.svg" [alt]="'Mobile number icon' | translate">
+                </div>
+
+                <div class="user-item__details">
+                  <h6>{{'Mobile number' | translate}}</h6>
+                  <span>{{userInfo.phone ? userInfo.phone : '-'}}</span>
+                </div>
+              </div>
+
+              <div class="vertical-line"></div>
+            </div>
+
+            <div class="d-flex">
+              <div class="personal-information__user-item">
+                <div class="user-item__img">
+                  <img src="assets/imgs/icn_birth_date_home.svg" [alt]="'Birthdate' | translate">
+                </div>
+
+                <div class="user-item__details">
+                  <h6>{{'Birthdate' | translate}}</h6>
+                  <span>{{userInfo.birthDate ? (userInfo.birthDate | date) : '-'}}</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+    </ng-container>
+    <!-- User Information End -->
+
+    <!-- Twist Products Start -->
+    <section class="twist-products section-padding"
+      *ngIf="(viewState | as : HomeStateReady).homeProducts.length; else noHomeProducts;">
+
+      <h4 class="section-heading">{{'Twist Products' | translate}}</h4>
+
+      <div class="row">
+        <div class="col-md-6 col-12 mb-4" *ngFor="let product of  (viewState | as : HomeStateReady).homeProducts">
+          <app-product-card [productID]="product?.id" [productName]="product?.name" [serviceType]="product?.serviceType"
+            [productDescription]="product?.description" [productLogo]="product?.logo" [websiteUrl]="product?.websiteUrl"
+            [appStoreUrl]="product?.appStoreUrl" [playStoreUrl]="product?.playStoreUrl"
+            [huaweiStoreUrl]="product?.huaweiStoreUrl" [appStoreBarcode]="product?.appStoreBarcode"
+            [playStoreBarcode]="product?.playStoreBarcode" [huaweiStoreBarcode]="product?.huaweiStoreBarcode"
+            [subscriptionsCount]="product?.subscriptionsCount" [productsDTO]="product?.productsImagesDto"
+            (goToDiscoverPlans)="goToDiscoverPlans(product?.serviceType)"></app-product-card>
+        </div>
+      </div>
+
+    </section>
+
+    <ng-template #noHomeProducts>
+      <app-empty-data [Title]="'Nothing here to show!' | translate"
+        [Description]="'No products to show, come again later'"></app-empty-data>
+    </ng-template>
+    <!-- Twist Products End -->
+  </ng-container>
+
+  <ng-container *ngSwitchCase="HomeStateName.HomeStateProcessing">
+    <ngx-skeleton-loader class="main-heading-skeleton" count="1"></ngx-skeleton-loader>
+
+    <ngx-skeleton-loader class="subheading-skeleton section-padding" count="1"></ngx-skeleton-loader>
+    <ngx-skeleton-loader count="1" [theme]="{
+      'height.px': '95'
+    }"></ngx-skeleton-loader>
+
+    <ngx-skeleton-loader class="subheading-skeleton section-padding" count="1"></ngx-skeleton-loader>
+    <div class="row">
+      <div class="col-md-6 col-12 mb-4" *ngFor="let item of [].constructor(4)">
+        <ngx-skeleton-loader count="1" [theme]="{
+          'height.px': '335'
+        }"></ngx-skeleton-loader>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="HomeStateName.HomeStateDisconnected">
+    <app-no-connection></app-no-connection>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="HomeStateName.HomeStateError">
+    <app-try-again (onTryAgain)="onRetry()"></app-try-again>
+  </ng-container>
+
+</ng-container>

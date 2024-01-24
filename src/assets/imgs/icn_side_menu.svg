@@ -1,0 +1,8 @@
+<svg id="icn_side_menu" xmlns="http://www.w3.org/2000/svg" width="19.5" height="19.5" viewBox="0 0 19.5 19.5">
+  <g id="row-vertical">
+    <path id="Vector" d="M14.544,0H1.706C.487,0,0,.327,0,1.138V3.2C0,4.01.487,4.337,1.706,4.337H14.544c1.219,0,1.706-.327,1.706-1.138V1.138C16.25.327,15.763,0,14.544,0Z" transform="translate(1.625 1.625)" fill="#f7f7f7"/>
+    <path id="Vector-2" data-name="Vector" d="M14.544,0H1.706C.487,0,0,.327,0,1.138V3.2C0,4.01.487,4.337,1.706,4.337H14.544c1.219,0,1.706-.327,1.706-1.138V1.138C16.25.327,15.763,0,14.544,0Z" transform="translate(1.625 7.581)" fill="#f7f7f7"/>
+    <path id="Vector-3" data-name="Vector" d="M14.544,0H1.706C.487,0,0,.327,0,1.138V3.2C0,4.01.487,4.337,1.706,4.337H14.544c1.219,0,1.706-.327,1.706-1.138V1.138C16.25.327,15.763,0,14.544,0Z" transform="translate(1.625 13.538)" fill="#f7f7f7"/>
+    <path id="Vector-4" data-name="Vector" d="M0,0H19.5V19.5H0Z" transform="translate(19.5 19.5) rotate(180)" fill="none" opacity="0"/>
+  </g>
+</svg>

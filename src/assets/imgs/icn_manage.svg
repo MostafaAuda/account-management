@@ -1,0 +1,16 @@
+<svg id="icn_manage" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" viewBox="0 0 15 15">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.026" y1="0.029" x2="0.976" y2="0.981" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e64747"/>
+      <stop offset="1" stop-color="#1a66ff"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_33961" data-name="Group 33961" transform="translate(-683 -189)">
+    <rect id="Rectangle_17696" data-name="Rectangle 17696" width="15" height="15" rx="3" transform="translate(683 189)" opacity="0.998" fill="url(#linear-gradient)"/>
+  </g>
+  <g id="Group_33962" data-name="Group 33962" transform="translate(-688.514 -192.5)">
+    <path id="Vector" d="M.495.5H.505" transform="translate(699.529 199.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Vector-2" data-name="Vector" d="M.495.5H.505" transform="translate(695.506 199.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Vector-3" data-name="Vector" d="M.495.5H.505" transform="translate(691.5 199.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  </g>
+</svg>

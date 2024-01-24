@@ -1,0 +1,35 @@
+<div [class]="'service ' + serviceType">
+  <div class="service__overlay"></div>
+  <div class="service__container">
+    <div class="service__contents">
+      <!-- Service card header starts -->
+      <div class="header__logo-container" [class.invisible]="!serviceType">
+        <img class="header__logo" [src]="
+          serviceType == serviceTypeName.games ? 'assets/imgs/icn_games_logo.png' :
+          serviceType == serviceTypeName.tv ? 'assets/imgs/icn_tv_twist_logo.png' :
+          serviceType == serviceTypeName.music ? 'assets/imgs/icn_music_twist_logo.png' :
+          serviceType == serviceTypeName.sports ? 'assets/imgs/icn_sports_logo.png' : ''"
+          [alt]="serviceType + ' logo' | translate">
+      </div>
+      <!-- Service card header ends -->
+
+      <!-- Service card content starts -->
+      <ul class="content__list-container" [class.invisible]="!serviceDescription?.length">
+        <span class="list__title" [class.invisible]="!totalPlans">{{'Include' | translate}}
+          <b>{{totalPlans}}</b>
+          {{'plans' | translate}}
+          :</span>
+        <li *ngFor="let detail of serviceDescription" class="list__item">{{detail}}</li>
+      </ul>
+      <!-- Service card content ends -->
+    </div>
+
+    <a class="discover-plans-link" (click)="onDiscoverPlansClick()">
+      <strong>{{'Discover plans' | translate}}</strong>
+      <span>
+        <img src="assets/imgs/icn_arrow_right.svg" [alt]="'Right Arrow Icon' | translate">
+      </span>
+    </a>
+  </div>
+
+</div>

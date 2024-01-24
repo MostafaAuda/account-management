@@ -1,0 +1,22 @@
+:host ::ng-deep .logo-width {
+  width: 30vw;
+
+  /*--------------------------------------------------------------------------------------------------------------------*/
+  /* Media Queries for RTL - LTR */
+
+  /* Screen between tablets and large screens */
+  @media only screen and (max-width: 1199px) {}
+
+  /* All tablets */
+  @media only screen and (max-width: 991px) {
+    width: 45vw;
+  }
+
+  /* All mobile phones */
+  @media only screen and (max-width: 767px) {
+    width: 55vw;
+  }
+
+  /* Galaxy fold phone only */
+  @media only screen and (max-width: 319px) {}
+}

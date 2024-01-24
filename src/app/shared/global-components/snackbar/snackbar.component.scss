@@ -1,0 +1,40 @@
+.snackbar-container {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 55px;
+    height: 55px;
+    margin-inline-end: 15px;
+  }
+
+  span {
+    color: var(--twist-primary-light);
+    font-weight: 600;
+  }
+
+  /*--------------------------------------------------------------------------------------------------------------------*/
+  /* Media Queries for RTL - LTR */
+
+  /* Screen between tablets and large screens */
+  @media only screen and (max-width: 1199px) {}
+
+  /* All tablets */
+  @media only screen and (max-width: 991px) {}
+
+  /* All mobile phones */
+  @media only screen and (max-width: 767px) {
+    img {
+      width: 45px;
+      height: 45px;
+      margin-inline-end: 10px;
+    }
+
+    span {
+      font-size: 12px;
+    }
+  }
+
+  /* Galaxy fold phone only */
+  @media only screen and (max-width: 319px) {}
+}

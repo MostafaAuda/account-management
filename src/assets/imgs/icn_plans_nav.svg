@@ -1,0 +1,6 @@
+<svg id="icn_plans_nav" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="document">
+    <path id="Vector" d="M11.825,0H4.842A4.447,4.447,0,0,0,0,4.842v6.975a4.45,4.45,0,0,0,4.842,4.85h6.975a4.447,4.447,0,0,0,4.842-4.842V4.842A4.437,4.437,0,0,0,11.825,0Zm-.367,11.458H5.208a.625.625,0,0,1,0-1.25h6.25a.625.625,0,0,1,0,1.25Zm0-5H5.208a.625.625,0,0,1,0-1.25h6.25a.625.625,0,0,1,0,1.25Z" transform="translate(1.667 1.667)" fill="#f7f7f7"/>
+    <path id="Vector-2" data-name="Vector" d="M0,0H20V20H0Z" fill="none" opacity="0"/>
+  </g>
+</svg>

@@ -1,0 +1,18 @@
+<svg id="icn_add" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.026" y1="0.029" x2="0.976" y2="0.981" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e64747"/>
+      <stop offset="1" stop-color="#1a66ff"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_33968" data-name="Group 33968" transform="translate(-683 -189)">
+    <rect id="Rectangle_17696" data-name="Rectangle 17696" width="24" height="24" rx="5" transform="translate(683 189)" opacity="0.998" fill="url(#linear-gradient)"/>
+  </g>
+  <g id="vuesax_linear_add" data-name="vuesax/linear/add" transform="translate(-490 -250)">
+    <g id="add">
+      <path id="Vector" d="M0,0H10" transform="translate(497 262)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="Vector-2" data-name="Vector" d="M0,10V0" transform="translate(502 257)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="Vector-3" data-name="Vector" d="M0,0H20V20H0Z" transform="translate(492 252)" fill="none" opacity="0"/>
+    </g>
+  </g>
+</svg>

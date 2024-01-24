@@ -1,0 +1,6 @@
+<svg id="icn_default_add_payment" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="archive-tick">
+    <path id="Vector" d="M11.25,0H3.217A3.229,3.229,0,0,0,0,3.217V14.958c0,1.5,1.075,2.133,2.392,1.408l4.067-2.258a1.765,1.765,0,0,1,1.558,0l4.067,2.258c1.317.733,2.392.1,2.392-1.408V3.217A3.237,3.237,0,0,0,11.25,0Zm-1,5.933L6.917,9.267a.624.624,0,0,1-.883,0l-1.25-1.25a.625.625,0,0,1,.883-.883l.808.808L9.367,5.05a.625.625,0,0,1,.883.883Z" transform="translate(2.767 1.592)" fill="#f7f7f7"/>
+    <path id="Vector-2" data-name="Vector" d="M0,0H20V20H0Z" transform="translate(20 20) rotate(180)" fill="none" opacity="0"/>
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+<svg id="icn_home_nav" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="home-2">
+    <path id="Vector" d="M15.042,4.015,10.242.656A4.044,4.044,0,0,0,5.667.765L1.492,4.023A4.294,4.294,0,0,0,0,7.056v5.75a3.859,3.859,0,0,0,3.85,3.858h8.983a3.852,3.852,0,0,0,3.85-3.85V7.165A4.253,4.253,0,0,0,15.042,4.015ZM8.967,13.331a.625.625,0,0,1-1.25,0v-2.5a.625.625,0,1,1,1.25,0Z" transform="translate(1.658 1.669)" fill="#f7f7f7"/>
+    <path id="Vector-2" data-name="Vector" d="M0,0H20V20H0Z" transform="translate(20 20) rotate(180)" fill="none" opacity="0"/>
+  </g>
+</svg>

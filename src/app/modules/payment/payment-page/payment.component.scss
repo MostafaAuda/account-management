@@ -1,0 +1,94 @@
+section {
+  position: relative;
+  overflow: hidden;
+
+  .section-heading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    .heading-container__btn {
+      display: flex;
+      align-items: center;
+      margin-inline-end: 4px;
+      cursor: pointer;
+      font-size: 14px;
+
+      /*--------------------------------------------------------------------------------------------------------------------*/
+      /* Media Queries for RTL - LTR */
+
+      /* Screen between tablets and large screens */
+      @media only screen and (max-width: 1199px) {}
+
+      /* All tablets */
+      @media only screen and (max-width: 991px) {}
+
+      /* All mobile phones */
+      @media only screen and (max-width: 767px) {
+        margin-inline-end: 0;
+
+        span {
+          display: none;
+        }
+      }
+
+      /* Galaxy fold phone only */
+      @media only screen and (max-width: 319px) {}
+
+    }
+
+    .btn__img-container {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      margin-inline-end: 4px;
+
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .empty-content {
+    width: 304px;
+    height: 125px;
+
+    .btn__img-container {
+      width: 24px;
+      height: 24px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    /*--------------------------------------------------------------------------------------------------------------------*/
+    /* Media Queries for RTL - LTR */
+
+    /* Screen between tablets and large screens */
+    @media only screen and (max-width: 1199px) {}
+
+    /* All tablets */
+    @media only screen and (max-width: 991px) {}
+
+    /* All mobile phones */
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+    }
+
+    /* Galaxy fold phone only */
+    @media only screen and (max-width: 319px) {}
+  }
+
+  .payment-card-method {
+    display: block;
+  }
+
+  .payment-history-content {
+    margin-bottom: 24px;
+  }
+}

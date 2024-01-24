@@ -1,0 +1,85 @@
+//Swiper Navigation
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: var(--twist-primary-light);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  text-align: center;
+  transition: background-color var(--twist-animate-duration);
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+  margin: 0 !important;
+  transform: translateY(-50%);
+
+  &::after {
+    font-size: 8px;
+    font-weight: 900;
+    color: var(--twist-black);
+  }
+
+  &.swiper-button-disabled {
+    display: none;
+  }
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: var(--twist-text-hover);
+
+  &::after {
+    color: var(--twist-primary-light);
+  }
+}
+
+//swiper scrollbar
+.swiper-horizontal>.swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  display: none;
+}
+
+//Swiper Pagination
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 0;
+}
+
+.swiper-pagination-bullet {
+  background: #f1f1f13f;
+  opacity: 1;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+
+.swiper-pagination-bullet-active {
+  background: var(--twist-gradient-vertical) !important;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin-inline: 4px;
+}
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Media Queries for RTL - LTR */
+
+/* Screen between tablets and large screens */
+@media only screen and (max-width: 1199px) {}
+
+/* All tablets */
+@media only screen and (max-width: 991px) {
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+}
+
+/* All mobile phones */
+@media only screen and (max-width: 767px) {}
+
+/* Galaxy fold phone only */
+@media only screen and (max-width: 319px) {}

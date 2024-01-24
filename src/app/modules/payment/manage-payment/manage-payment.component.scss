@@ -1,0 +1,26 @@
+.manage-payment-methods {
+
+  .payment-methods__heading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .heading-container__btn {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+
+    .btn__img-container {
+      margin-inline-end: 4px;
+      width: 20px;
+      display: flex;
+
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+<!-- plan-card starts -->
+<div class="plan-card-container" [ngClass]="{'subscribed': isSubscribed }" [ngStyle]="{'border-color': borderColor}">
+  <div>
+    <!-- plan-card__header starts -->
+    <h6 class="header__title" *ngIf="planName"
+      [ngStyle]="{'background-image': 'url(../../../../assets/imgs/plans/img_white_layer_card_plan.svg), linear-gradient(100deg, ' + linearGradientTop +',' + linearGradientBottom + ')'}">
+      {{planName}}</h6>
+    <!-- plan-card__header ends -->
+
+    <!-- plan-card__content starts -->
+    <div class="plan-card__body-content">
+
+      <h4 class="content__price" *ngIf="planPrice">{{planPrice}}</h4>
+
+      <ul class="list-container__list" *ngIf="planDescription?.length">
+        <li *ngFor="let detail of planDescription">
+          <div class="item-icon-container">
+            <span [ngClass]="{
+            'games-icon': serviceType == ServiceTypeName.games,
+            'music-icon': serviceType == ServiceTypeName.music,
+            'tv-icon': serviceType == ServiceTypeName.tv,
+            'sports-icon': serviceType == ServiceTypeName.sports
+            }"></span>
+          </div>
+          <span>{{detail}}</span>
+        </li>
+      </ul>
+
+      <div class="content__img-container" *ngIf="planName == 'trivia'">
+        <img [alt]="planName" [src]="'assets/imgs/plans/planLogo.png'"
+          onerror="this.onerror=null;this.src='assets/imgs/plans/planLogo.png'">
+      </div>
+    </div>
+    <!-- plan-card__content ends -->
+  </div>
+
+  <!-- plan-card__button starts -->
+  <div>
+    <a *ngIf="!isSubscribed" class="plan-card__button footer--white" (click)="onUserSubscribe()">
+      <span>{{'Subscribe Now' | translate}}</span>
+    </a>
+    <a *ngIf="isSubscribed" class="plan-card__button footer--transparent" (click)="onUserUnsubscribe()">
+      <span>{{'Unsubscribe' | translate}}</span>
+    </a>
+  </div>
+  <!-- plan-card__button end -->
+
+</div>
+<!-- plan-card end -->

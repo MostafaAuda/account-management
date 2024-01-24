@@ -1,0 +1,6 @@
+<svg id="musicnote" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+  <path id="Vector" d="M4,2A2,2,0,1,1,2,0,2,2,0,0,1,4,2Z" transform="translate(1.985 7)" fill="none" stroke="#fbfbfb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  <path id="Vector-2" data-name="Vector" d="M0,7V0" transform="translate(5.985 2)" fill="none" stroke="#fbfbfb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  <path id="Vector-3" data-name="Vector" d="M1.315.069,3.525.8A1.526,1.526,0,0,1,4.5,2.154v.585a.94.94,0,0,1-1.315.95L.975,2.954A1.526,1.526,0,0,1,0,1.6v-.59A.937.937,0,0,1,1.315.069Z" transform="translate(5.99 0.986)" fill="none" stroke="#fbfbfb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  <path id="Vector-4" data-name="Vector" d="M0,0H12V12H0Z" fill="none" opacity="0"/>
+</svg>

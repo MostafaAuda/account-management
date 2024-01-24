@@ -1,0 +1,82 @@
+<h1>
+  {{"Join Twist Now" | translate}}
+</h1>
+
+<h2>
+  {{"Enter Password To Create New Account" | translate}}
+</h2>
+
+<div class="user-info">
+  <div class="user-info__img-container">
+    <img src="assets/icons/icn_email_address_home.svg" [alt]="'Mail icon' | translate">
+  </div>
+  <span>
+    {{userEntryData.entryID}}
+  </span>
+</div>
+
+<div class="error-msg" *ngIf="formError">
+  <img src="assets/icons/icn_error.svg" [alt]="'Error icon' | translate">
+  <span>
+    {{formError}}
+  </span>
+</div>
+
+<form [formGroup]="signupForm" (ngSubmit)="onUserSignupEvent()" *ngIf="signupForm" (keydown)="submitListen($event)">
+  <div class="form-group">
+    <label for="newPassword">{{'New Password' | translate}}</label>
+    <div class="input-with-image">
+      <img class="input-icon" src="assets/icons/vuesax-linear-lock.svg" [alt]="'User icon' | translate">
+      <input id="newPassword" autocomplete="new-password" [type]=" showPassword ? 'text' : 'password'"
+        class="form-control" placeholder="{{'Enter your new password' | translate}}" formControlName="newPassword"
+        [ngClass]="{ 'is-invalid': signupFormControls['newPassword'].errors && signupFormControls['newPassword'].value?.length, 'is-valid': !signupFormControls['newPassword'].errors}">
+      <a (click)="onShowPassword()" *ngIf="signupFormControls['newPassword'].value?.length">
+        <img class="password-icon"
+          [src]="showPassword ? 'assets/icons/vuesax-bold-eye-slash.svg' : 'assets/icons/vuesax-bold-eye.svg'"
+          [alt]="showPassword ? 'Hide Password Icon' : 'Show Password Icon' | translate">
+      </a>
+      <small *ngIf="signupFormControls['newPassword'].errors" class="invalid-feedback">
+        <span *ngIf="signupFormControls['newPassword'].errors['minlength']">
+          {{'Password must be at least 8 characters.' | translate}}
+        </span>
+        <span *ngIf="signupFormControls['newPassword'].errors['pattern']">
+          {{'Password must contain at least one number.' | translate}}
+        </span>
+        <span *ngIf="signupFormControls['newPassword'].errors['pattern']">
+          {{'Password must contain upper & lower case letters.' | translate}}
+        </span>
+      </small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="confirmPassword">{{'Confirm New Password' | translate}}</label>
+    <div class="input-with-image">
+      <img class="input-icon" src="assets/icons/vuesax-linear-lock.svg" [alt]="'User icon' | translate">
+      <input id="confirmPassword" [type]=" showConfirmPassword ? 'text' : 'password'" class="form-control"
+        placeholder="{{'Re-enter your new password' | translate}}" formControlName="confirmPassword"
+        [ngClass]="{ 'is-invalid': signupFormControls['confirmPassword'].errors && signupFormControls['confirmPassword'].value?.length, 'is-valid': !signupFormControls['confirmPassword'].errors}">
+      <a (click)="onShowConfirmPassword()" *ngIf="signupFormControls['confirmPassword'].value?.length">
+        <img class="password-icon"
+          [src]="showConfirmPassword ? 'assets/icons/vuesax-bold-eye-slash.svg' : 'assets/icons/vuesax-bold-eye.svg'"
+          [alt]="showConfirmPassword ? 'Hide Password Icon' : 'Show Password Icon' | translate">
+      </a>
+      <small *ngIf="signupFormControls['confirmPassword'].errors" class="invalid-feedback">
+        <span *ngIf="signupFormControls['confirmPassword'].errors['notMatching']">
+          {{'Passwords are not matching' | translate}}
+        </span>
+      </small>
+    </div>
+  </div>
+  <button class="btn btn--gradient w-100" type="submit" [disabled]="!signupForm.valid || is_submitting">
+    {{'Continue' | translate}}
+  </button>
+</form>
+
+<ul class="signup-actions user-action-list">
+  <li>
+    <a (click)="onBackToVerificationClick()">
+      {{'Already have an account?' | translate}}
+    </a>
+  </li>
+</ul>

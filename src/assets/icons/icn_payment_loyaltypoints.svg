@@ -1,0 +1,13 @@
+<svg id="icn_payment_loyaltypoints" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <circle id="Ellipse_1439" data-name="Ellipse 1439" cx="15" cy="15" r="15" fill="#f7f7f7" opacity="0.099"/>
+  <g id="vuesax_twotone_coin" data-name="vuesax/twotone/coin" transform="translate(-166 -310)">
+    <g id="coin" transform="translate(172 316)">
+      <path id="Vector" d="M10.026,0V2.854c0,2.406-2.244,4.358-5.013,4.358S0,5.26,0,2.854V0C0,2.406,2.244,4.126,5.013,4.126S10.026,2.406,10.026,0Z" transform="translate(4.242 9.756)" fill="rgba(0,0,0,0)" stroke="#f7f7f7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" opacity="0.4"/>
+      <g id="Group" transform="translate(4.242 1.543)">
+        <path id="Vector-2" data-name="Vector" d="M10.026,4.358a3.628,3.628,0,0,1-.532,1.9A5.154,5.154,0,0,1,5.013,8.484,5.154,5.154,0,0,1,.532,6.263,3.628,3.628,0,0,1,0,4.358,4.083,4.083,0,0,1,1.465,1.28,5.378,5.378,0,0,1,5.013,0,5.413,5.413,0,0,1,8.561,1.273,4.111,4.111,0,0,1,10.026,4.358Z" fill="none" stroke="#f7f7f7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        <path id="Vector-3" data-name="Vector" d="M10.026,4.358V8.214c0,2.406-2.244,4.126-5.013,4.126S0,10.62,0,8.214V4.358C0,1.951,2.244,0,5.013,0A5.413,5.413,0,0,1,8.561,1.273,4.111,4.111,0,0,1,10.026,4.358Z" fill="none" stroke="#f7f7f7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      </g>
+      <path id="Vector-4" data-name="Vector" d="M0,0H18.51V18.51H0Z" fill="none" opacity="0"/>
+    </g>
+  </g>
+</svg>

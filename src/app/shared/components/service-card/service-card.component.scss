@@ -1,0 +1,109 @@
+.service {
+  padding: 15px;
+  border-radius: 15px;
+  background-size: cover;
+  height: 100%;
+  position: relative;
+
+  .service__overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 14px;
+    background: linear-gradient(360deg, rgb(0 0 0 / 52%) 0%, rgb(0 0 0 / 27%) 53%, rgb(0 0 0 / 25%) 100%);
+  }
+
+  .service__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    .header__logo-container {
+      width: 45px;
+      margin-bottom: 12px;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .content__list-container {
+      list-style: none;
+      padding: 0px;
+      color: var(--twist-secondary-gray);
+
+      .list__title {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+      .list__item {
+        font-size: 12px;
+        margin-bottom: 10px;
+
+        b {
+          margin-inline-end: 3px;
+          font-size: 14px;
+        }
+      }
+
+    }
+
+    .discover-plans-link {
+      display: flex;
+      align-items: center;
+      transition: transform var(--twist-animate-duration);
+
+      &:hover {
+        transform: translateX(5px);
+      }
+
+      strong {
+        font-size: 14px;
+      }
+
+      /* Media Queries for RTL - LTR */
+
+      /* Screen between tablets and large screens */
+      @media only screen and (max-width: 1199px) {}
+
+      /* All tablets */
+      @media only screen and (max-width: 991px) {
+        margin-top: 10px;
+      }
+
+      /* All mobile phones */
+      @media only screen and (max-width: 767px) {
+        font-size: 14px;
+      }
+
+      /* Galaxy fold phone only */
+      @media only screen and (max-width: 319px) {}
+    }
+  }
+
+  &.games {
+    background: url('../../../../assets/imgs/ilu_background_plans_cards.svg'), linear-gradient(180deg, var(--twist-dark), var(--twist-games-red));
+    background-repeat: no-repeat;
+  }
+
+  &.tv {
+    background: url('../../../../assets/imgs/ilu_background_plans_cards.svg'), linear-gradient(180deg, var(--twist-dark), var(--twist-tv-purple));
+    background-repeat: no-repeat;
+  }
+
+  &.sports {
+    background: url('../../../../assets/imgs/ilu_background_plans_cards.svg'), linear-gradient(180deg, var(--twist-dark), var(--twist-sports-sky-blue));
+    background-repeat: no-repeat;
+  }
+
+  &.music {
+    background: url('../../../../assets/imgs/ilu_background_plans_cards.svg'), linear-gradient(180deg, var(--twist-dark), var(--twist-music-blue));
+    background-repeat: no-repeat;
+  }
+}

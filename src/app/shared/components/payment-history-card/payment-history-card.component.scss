@@ -1,0 +1,179 @@
+.payment-card-container {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--twist-primary-dark);
+  border-radius: 15px;
+  padding: 16px 16px 16px 32px;
+  display: flex;
+  flex-direction: column;
+
+  .card-content {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      bottom: 0;
+      inset-inline-start: -16px;
+      width: 3px;
+      border-radius: 15px;
+    }
+
+    .card-content-description {
+      display: flex;
+      align-items: center;
+      margin-block-end: 16px;
+      margin-block-start: 8px;
+      /*--------------------------------------------------------------------------------------------------------------------*/
+      /* Media Queries for RTL - LTR */
+
+      /* Screen between tablets and large screens */
+      @media only screen and (max-width: 1199px) {}
+
+      /* All tablets */
+      @media only screen and (max-width: 991px) {}
+
+      /* All mobile phones */
+      @media only screen and (max-width: 767px) {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 24px;
+      }
+
+      /* Galaxy fold phone only */
+      @media only screen and (max-width: 319px) {}
+    }
+
+    @mixin cardCategory($color) {
+      .content-description__category {
+        margin-inline-end: 8px;
+        color: $color;
+        text-transform: uppercase;
+      }
+
+      &::before {
+        background-color: $color;
+      }
+    }
+
+    &.games {
+      @include cardCategory(var(--twist-games-red))
+    }
+
+    &.sports {
+      @include cardCategory(var(--twist-sports-sky-blue))
+    }
+
+    &.music {
+      @include cardCategory(var(--twist-music-blue))
+    }
+
+    &.tv {
+      @include cardCategory(var(--twist-tv-purple))
+    }
+
+  }
+
+  .card-content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .content-header__title {
+      font-size: 12px;
+      color: var(--twist-secondary-gray);
+      letter-spacing: 0.24px;
+    }
+  }
+
+  .card-content-type {
+    display: flex;
+    align-items: center;
+    color: var(--twist-secondary-gray);
+
+    .content-type__img-container {
+      width: 30px;
+      height: 30px;
+      margin-inline-end: 8px;
+      text-align: center;
+
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .content-type__name {
+      font-size: 14px;
+    }
+  }
+
+  .card-content-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    /*--------------------------------------------------------------------------------------------------------------------*/
+    /* Media Queries for RTL - LTR */
+
+    /* Screen between tablets and large screens */
+    @media only screen and (max-width: 1199px) {}
+
+    /* All tablets */
+    @media only screen and (max-width: 991px) {}
+
+    /* All mobile phones */
+    @media only screen and (max-width: 767px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    /* Galaxy fold phone only */
+    @media only screen and (max-width: 319px) {}
+  }
+
+  .footer__subscription {
+    display: flex;
+    align-items: center;
+
+    .subscription__img-container {
+      width: 16px;
+      margin-inline-end: 4px;
+      display: flex;
+
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .footer__subscribed {
+      font-size: 12px;
+      color: var(--twist-green);
+    }
+
+    .footer__unsubscribed {
+      font-size: 12px;
+      color: var(--twist-yellow);
+    }
+
+    /*--------------------------------------------------------------------------------------------------------------------*/
+    /* Media Queries for RTL - LTR */
+
+    /* Screen between tablets and large screens */
+    @media only screen and (max-width: 1199px) {}
+
+    /* All tablets */
+    @media only screen and (max-width: 991px) {}
+
+    /* All mobile phones */
+    @media only screen and (max-width: 767px) {
+      margin-top: 25px;
+    }
+
+    /* Galaxy fold phone only */
+    @media only screen and (max-width: 319px) {}
+
+  }
+}

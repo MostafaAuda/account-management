@@ -1,0 +1,250 @@
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  outline: none;
+  font-family: "Poppins", "Helvetica Neue", sans-serif;
+  padding: 0;
+  margin: 0;
+  text-align: start;
+  color: var(--twist-white);
+  overflow-x: hidden;
+  height: 100%;
+}
+
+html[dir="rtl"] body {
+  font-family: "Cairo", "Helvetica Neue", sans-serif !important;
+  text-align: right;
+}
+
+*::selection {
+  background-color: var(--twist-secondary);
+  color: var(--twist-white);
+}
+
+*::-moz-selection {
+  background-color: var(--twist-secondary);
+  color: var(--twist-white);
+}
+
+*:focus {
+  outline: none;
+}
+
+button:focus {
+  outline: 0;
+  box-shadow: unset !important;
+}
+
+a {
+  color: var(--twist-light);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  outline: none;
+  color: var(--twist-white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+strong,
+input,
+a,
+button,
+span {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+strong,
+a,
+span,
+blockquote,
+li {
+  word-break: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong {
+  color: var(--twist-white);
+  font-weight: 600;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+//remove autofill default background
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Custom classes */
+
+.not-allowed {
+  cursor: not-allowed !important;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.btn--gradient {
+  border-radius: 25px;
+  border: 0px !important;
+  background: var(--twist-gradient-horizontal);
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--twist-white);
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+  transition: box-shadow var(--twist-animate-duration);
+
+  &:hover {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+  }
+}
+
+.section-padding {
+  padding-top: 48px;
+
+  /* Media Queries for RTL - LTR */
+
+  /* Screen between tablets and large screens */
+  @media only screen and (max-width: 1199px) {}
+
+  /* All tablets */
+  @media only screen and (max-width: 991px) {}
+
+  /* All mobile phones */
+  @media only screen and (max-width: 767px) {
+    padding-top: 30px;
+  }
+
+  /* Galaxy fold phone only */
+  @media only screen and (max-width: 319px) {}
+
+}
+
+.section-heading {
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+ngx-skeleton-loader {
+  display: flex;
+
+  .skeleton-loader {
+    background: var(--twist-primary) no-repeat !important;
+    border-radius: 16px !important;
+
+    &.progress:before {
+      background-image: linear-gradient(90deg, rgba(10, 11, 16, 0), rgba(10, 11, 16, .6), rgba(10, 11, 16, 0)) !important;
+    }
+  }
+
+  &.main-skeleton .skeleton-loader {
+    height: unset !important;
+    margin-inline-end: 12px !important;
+    aspect-ratio: 1/1;
+  }
+
+  &.main-heading-skeleton .skeleton-loader {
+    height: 24px !important;
+    width: 30% !important;
+  }
+
+  &.subheading-skeleton .skeleton-loader {
+    height: 20px !important;
+    width: 20% !important;
+    margin-bottom: 12px !important;
+  }
+
+  /*--------------------------------------------------------------------------------------------------------------------*/
+  /* Media Queries for RTL - LTR */
+
+  /* Screen between tablets and large screens */
+  @media only screen and (max-width: 1199px) {}
+
+  /* All tablets */
+  @media only screen and (max-width: 991px) {}
+
+  /* All mobile phones */
+  @media only screen and (max-width: 767px) {
+    &.main-heading-skeleton .skeleton-loader {
+      width: 80% !important;
+    }
+
+    &.subheading-skeleton .skeleton-loader {
+      width: 60% !important;
+    }
+  }
+
+  /* Galaxy fold phone only */
+  @media only screen and (max-width: 319px) {}
+}
+
+.empty-response {
+  height: 135px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+  background: var(--twist-primary-dark);
+  border-radius: 15px;
+  text-align: center;
+
+  span {
+    font-size: 14px;
+    color: var(--twist-secondary-gray);
+  }
+
+  a {
+    text-decoration: underline;
+    margin-top: 12px;
+  }
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Media Queries for RTL - LTR */
+
+/* Screen between tablets and large screens */
+@media only screen and (max-width: 1199px) {}
+
+/* All tablets */
+@media only screen and (max-width: 991px) {}
+
+/* All mobile phones */
+@media only screen and (max-width: 767px) {}
+
+/* Galaxy fold phone only */
+@media only screen and (max-width: 319px) {}

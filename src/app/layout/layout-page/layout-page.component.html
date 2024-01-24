@@ -1,0 +1,105 @@
+<div class="app-background"></div>
+
+<!--Main Sidebar Content-->
+<section class="side-menu-container">
+
+  <!-- Desktop Sidemenu -->
+  <div class="side-menu">
+    <div class="mobile-view">
+      <!-- Side menu Logo -->
+      <a class="side-menu__logo">
+        <div class="main-logo">
+          <img src="assets/imgs/twist-logo.svg" [alt]="'Twist Logo' | translate">
+        </div>
+      </a>
+
+      <!-- Side menu items -->
+      <a class="side-menu__item" [routerLink]="['./']" [routerLinkActiveOptions]="{exact: true}"
+        routerLinkActive="active">
+        <img src="assets/imgs/icn_home_nav.svg" [alt]="'Home Icon' | translate">
+        <span>{{"Home" | translate}}</span>
+      </a>
+
+      <a class="side-menu__item" [routerLink]="['./plans']" routerLinkActive="active">
+        <img src="assets/imgs/icn_plans_nav.svg" [alt]="'Plans Icon' | translate">
+        <span>{{"Plans & subscription" | translate}}</span>
+      </a>
+
+      <a class="side-menu__item" [routerLink]="['/payment']" routerLinkActive="active">
+        <img src="assets/imgs/icn_payment_nav.svg" [alt]="'Payment Icon' | translate">
+        <span>{{"Payment" | translate}}</span>
+      </a>
+
+      <a class="side-menu__item" [routerLink]="['./setting']" routerLinkActive="active">
+        <img src="assets/imgs/icn_setting_nav.svg" [alt]="'Settings Icon' | translate">
+        <span>{{"Settings" | translate}}</span>
+      </a>
+    </div>
+
+    <!-- Promotional Card Side Menu -->
+    <app-promotional-card></app-promotional-card>
+
+  </div>
+
+  <!-- Mobile Header -->
+  <nav class="navbar mobile-navbar">
+    <div class="mobile-navbar__header">
+      <a class="navbar-brand">
+        <img src="assets/imgs/twist-logo.svg" [alt]="'Twist Logo' | translate">
+      </a>
+      <button class="mobile-navbar__btn-toggler collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#twistNav" aria-controls="twistNav" aria-label="Toggle navigation" #mobileDropdownToggler>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse mobile-navbar__collapse collapse" id="twistNav">
+      <div class="mobile-navbar__inner-content ">
+        <ul class="navbar-nav mobile-navbar__list">
+          <li class="nav-item mobile-navbar__item" [routerLink]="['./']" [routerLinkActiveOptions]="{exact: true}"
+            routerLinkActive="mobile-navbar__active" (click)="collapseMenu();">
+            <a class="nav-link mobile-navbar__link">
+              <img src="assets/imgs/icn_home_nav.svg" [alt]="'Home Icon' | translate">
+              <span>{{"Home" | translate}}</span></a>
+          </li>
+          <li class="nav-item mobile-navbar__item" [routerLink]="['./plans']" routerLinkActive="mobile-navbar__active"
+            (click)="collapseMenu();">
+            <a class="nav-link mobile-navbar__link">
+              <img src="assets/imgs/icn_plans_nav.svg" [alt]="'Plans Icon' | translate">
+              <span>{{"Plans & subscription" | translate}}</span></a>
+          </li>
+          <li class="nav-item mobile-navbar__item" [routerLink]="['./payment']" routerLinkActive="mobile-navbar__active"
+            (click)="collapseMenu();">
+            <a class="nav-link mobile-navbar__link"> <img src="assets/imgs/icn_payment_nav.svg"
+                [alt]="'Payment Icon' | translate">
+              <span>{{"Payment" | translate}}</span></a>
+          </li>
+          <li class="nav-item mobile-navbar__item" [routerLink]="['./setting']" routerLinkActive="mobile-navbar__active"
+            (click)="collapseMenu();">
+            <a class="nav-link mobile-navbar__link"> <img src="assets/imgs/icn_setting_nav.svg"
+                [alt]="'Settings Icon' | translate">
+              <span>{{"Settings" | translate}}</span></a>
+          </li>
+        </ul>
+
+        <!-- Promotional Card Mobile View -->
+        <app-promotional-card [mobileView]="true"></app-promotional-card>
+      </div>
+    </div>
+
+  </nav>
+
+  <!-- Side content -->
+  <div class="side-content">
+    <div class="container-fluid container-xxl">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</section>
+<!--Main Sidebar Content-->
+
+<!--Global shared-->
+<app-loading-spinner></app-loading-spinner>
+<!--Global shared-->

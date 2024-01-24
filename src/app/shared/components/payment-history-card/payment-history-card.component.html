@@ -1,0 +1,53 @@
+<div class="payment-card-container shadow">
+  <div [class]="'card-content '" [ngClass]="
+  cardCategory == serviceTypeName.games ? 'games' :
+  cardCategory == serviceTypeName.tv ? 'tv' :
+  cardCategory == serviceTypeName.music ? 'music' :
+  cardCategory == serviceTypeName.sports ? 'sports' : ''">
+    <div class=" card-content-header">
+      <span class="content-header__title" *ngIf="creationDate">{{creationDate | date}}</span>
+      <strong class="fw-semibold fs-18" *ngIf="planPrice">{{planPrice}}</strong>
+    </div>
+
+    <div class='card-content-description'>
+      <strong class="content-description__category" *ngIf="cardCategory">{{cardCategory}}</strong>
+      <span class="fs-14" *ngIf="bundleName">{{bundleName}}</span>
+    </div>
+
+    <div class="card-content-type">
+      <div class="content-type__img-container">
+        <img *ngIf="paymentType == paymentMethods.CREADITCARD" src="assets/icons/icn_payment_credit_card.svg"
+          [alt]="'Credit card' | translate">
+        <img *ngIf="paymentType == paymentMethods.LOYALITYPOINTS" src="assets/icons/icn_payment_wallet.svg"
+          [alt]="'Loyality points icon' | translate">
+        <img *ngIf="paymentType == paymentMethods.DCB" src="assets/icons/icn_mobile_number_home.svg"
+          [alt]="'Mobile Balance icon' | translate">
+        <img *ngIf="paymentType == paymentMethods.COINS" src="assets/icons/icn_payment_wallet.svg"
+          [alt]="'Coins icon' | translate">
+      </div>
+      <span class="content-type__name"
+        *ngIf="paymentType == paymentMethods.LOYALITYPOINTS">{{'Loyality points' | translate}}</span>
+      <span class="content-type__name" *ngIf="paymentType == paymentMethods.DCB">{{'Mobile Balance' | translate}}</span>
+      <span class="content-type__name" *ngIf="paymentType == paymentMethods.COINS">{{'Coins' | translate}}</span>
+      <span class="content-type__name"
+        *ngIf="paymentType == paymentMethods.CREADITCARD">{{'Credit card' | translate}}</span>
+    </div>
+
+    <div class="card-content-footer">
+      <strong class="fw-normal" *ngIf="phoneOrCardNumber">
+        {{phoneOrCardNumber}}
+      </strong>
+
+      <div class="footer__subscription" *ngIf="subscribed">
+        <div class="subscription__img-container">
+          <img *ngIf="subscribed == 'Subscribed'" src="assets/icons/tick-circle.svg"
+            [alt]="'Unsubscribed icon' | translate">
+          <img *ngIf="subscribed !== 'Subscribed'" src="assets/icons/info-circle.svg"
+            [alt]="'Subscribed icon' | translate">
+        </div>
+        <span
+          [ngClass]="subscribed == 'Subscribed' ? 'footer__subscribed' : 'footer__unsubscribed'">{{subscribed}}</span>
+      </div>
+    </div>
+  </div>
+</div>

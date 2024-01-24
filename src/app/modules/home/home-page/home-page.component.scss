@@ -1,0 +1,130 @@
+.personal-information {
+
+  .personal-information__user {
+    background: var(--twist-primary-dark);
+    padding: 18px 16px;
+    border-radius: 15px;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+
+    .personal-information__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 100%;
+
+      .personal-information__user-item {
+        display: flex;
+        align-items: center;
+        margin-inline-end: auto;
+
+        .user-item__img {
+          margin-inline-end: 8px;
+          box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+          border-radius: 50%;
+        }
+
+        .user-item__details {
+          h6 {
+            font-size: 0.875rem;
+            font-weight: 300;
+            color: var(--twist-primary-light);
+          }
+
+          p {
+            font-weight: 600;
+            padding-inline-end: 20px;
+
+            /*--------------------------------------------------------------------------------------------------------------------*/
+            /* Media Queries for RTL - LTR */
+
+            /* Screen between tablets and large screens */
+            @media only screen and (max-width: 1199px) {}
+
+            /* All tablets */
+            @media only screen and (max-width: 991px) {}
+
+            /* All mobile phones */
+            @media only screen and (max-width: 767px) {
+              padding-inline-end: 0;
+            }
+
+            /* Galaxy fold phone only */
+            @media only screen and (max-width: 319px) {}
+          }
+        }
+      }
+
+      .vertical-line {
+        border-inline-start: 2px solid var(--twist-secondary);
+        height: 60px;
+
+        /*--------------------------------------------------------------------------------------------------------------------*/
+        /* Media Queries for RTL - LTR */
+
+        /* Screen between tablets and large screens */
+        @media only screen and (max-width: 1199px) {}
+
+        /* All tablets */
+        @media only screen and (max-width: 991px) {}
+
+        /* All mobile phones */
+        @media only screen and (max-width: 767px) {
+          display: none;
+        }
+
+        /* Galaxy fold phone only */
+        @media only screen and (max-width: 319px) {}
+      }
+
+      /*--------------------------------------------------------------------------------------------------------------------*/
+      /* Media Queries for RTL - LTR */
+
+      /* Screen between tablets and large screens */
+      @media only screen and (max-width: 1199px) {}
+
+      /* All tablets */
+      @media only screen and (max-width: 991px) {}
+
+      /* All mobile phones */
+      @media only screen and (max-width: 767px) {
+        grid-template-columns: 1fr;
+      }
+
+      /* Galaxy fold phone only */
+      @media only screen and (max-width: 319px) {}
+    }
+
+    /*--------------------------------------------------------------------------------------------------------------------*/
+    /* Media Queries for RTL - LTR */
+
+    /* Screen between tablets and large screens */
+    @media only screen and (max-width: 1199px) {}
+
+    /* All tablets */
+    @media only screen and (max-width: 991px) {
+      padding: 12px 16px;
+    }
+
+    /* All mobile phones */
+    @media only screen and (max-width: 767px) {}
+
+    /* Galaxy fold phone only */
+    @media only screen and (max-width: 319px) {}
+
+  }
+
+  /*--------------------------------------------------------------------------------------------------------------------*/
+  /* Media Queries for RTL - LTR */
+
+  /* Screen between tablets and large screens */
+  @media only screen and (max-width: 1199px) {}
+
+  /* All tablets */
+  @media only screen and (max-width: 991px) {}
+
+  /* All mobile phones */
+  @media only screen and (max-width: 767px) {}
+
+  /* Galaxy fold phone only */
+  @media only screen and (max-width: 319px) {}
+}

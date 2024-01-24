@@ -1,0 +1,194 @@
+@import "../auth-shared.style.scss";
+
+.layout {
+  background: url("../../../../assets/imgs/img_background_signin.jpg") no-repeat center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+
+  .header {
+    position: fixed;
+    z-index: 1;
+    height: 115px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .logo-container {
+      width: 90px;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &.form-logo-mobile {
+      @media only screen and (max-width: 1199px) {
+        background-color: var(--twist-primary);
+      }
+
+      /* All tablets */
+      @media only screen and (max-width: 991px) {}
+
+      /* All mobile phones */
+      @media only screen and (max-width: 767px) {}
+
+      /* Galaxy fold phone only */
+      @media only screen and (max-width: 319px) {}
+
+    }
+
+    @media only screen and (max-width: 1199px) {}
+
+    /* All tablets */
+    @media only screen and (max-width: 991px) {}
+
+    /* All mobile phones */
+    @media only screen and (max-width: 767px) {
+      height: 60px;
+    }
+
+    /* Galaxy fold phone only */
+    @media only screen and (max-width: 319px) {}
+
+  }
+
+  .layout-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 115px;
+
+    .form-container {
+      width: 500px;
+      height: 550px;
+      padding: 30px;
+      background-color: var(--twist-primary);
+      border-radius: 15px;
+      position: relative;
+      overflow: auto;
+      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+
+      @media only screen and (max-width: 1199px) {
+        width: 100%;
+        height: calc(100vh - 115px);
+        order: 2;
+        border-radius: 0;
+      }
+
+      /* All tablets */
+      @media only screen and (max-width: 991px) {}
+
+      /* All mobile phones */
+      @media only screen and (max-width: 767px) {
+        height: calc(100vh - 60px);
+        padding: 12px;
+      }
+
+      /* Galaxy fold phone only */
+      @media only screen and (max-width: 319px) {}
+    }
+
+    .figure-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 500px;
+
+      .img-container {
+        width: 100%;
+
+        img {
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+
+      button {
+        display: none;
+      }
+
+      @media only screen and (max-width: 1199px) {
+        order: 1;
+        height: calc(100vh - 115px);
+        flex-direction: column;
+        width: 85%;
+        justify-content: unset;
+
+        button {
+          margin-top: 65px;
+          display: block;
+        }
+      }
+
+      /* All tablets */
+      @media only screen and (max-width: 991px) {}
+
+      /* All mobile phones */
+      @media only screen and (max-width: 767px) {
+        width: 100%;
+        height: calc(100vh - 60px);
+      }
+
+      /* Galaxy fold phone only */
+      @media only screen and (max-width: 319px) {}
+    }
+
+    @media only screen and (max-width: 1199px) {
+      width: 100%;
+      height: unset;
+      flex-direction: column;
+    }
+
+    /* All tablets */
+    @media only screen and (max-width: 991px) {}
+
+    /* All mobile phones */
+    @media only screen and (max-width: 767px) {
+      padding-top: 60px;
+    }
+
+    /* Galaxy fold phone only */
+    @media only screen and (max-width: 319px) {}
+  }
+
+  .activate-mobile-view {
+    transition: transform var(--twist-animate-duration);
+
+    @media only screen and (max-width: 1199px) {
+      transform: translateY(calc(-100vh + 115px));
+    }
+
+    /* All tablets */
+    @media only screen and (max-width: 991px) {}
+
+    /* All mobile phones */
+    @media only screen and (max-width: 767px) {
+      transform: translateY(calc(-100vh + 60px));
+    }
+
+    /* Galaxy fold phone only */
+    @media only screen and (max-width: 319px) {}
+
+  }
+
+  /* Media Queries for RTL - LTR */
+  /* Screen between tablets and large screens */
+  @media only screen and (max-width: 1199px) {
+    .custom-width {
+      max-width: 100%;
+      padding-inline: 0;
+    }
+  }
+
+  /* All tablets */
+  @media only screen and (max-width: 991px) {}
+
+  /* All mobile phones */
+  @media only screen and (max-width: 767px) {}
+
+  /* Galaxy fold phone only */
+  @media only screen and (max-width: 319px) {}
+}

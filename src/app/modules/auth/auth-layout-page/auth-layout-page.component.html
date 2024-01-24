@@ -1,0 +1,32 @@
+<section class="layout">
+
+  <header class="header" #header>
+    <div class="container">
+      <div class="logo-container">
+        <a [routerLink]="['/auth']">
+          <img loading="lazy" src="assets/imgs/icn_twist_logo.svg" [alt]="'logo icon'| translate" />
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="container custom-width layout-container" #layout_container>
+    <div class="form-container">
+      <router-outlet></router-outlet>
+    </div>
+
+    <div class="figure-container">
+      <div class="img-container">
+        <lottie-player src="../../../../assets/gifs/twistweb.json" background="transparent" speed="1" loop
+          autoplay></lottie-player>
+      </div>
+      <button class="btn btn--gradient w-75" (click)="continue()">
+        {{ "Continue" | translate }}
+      </button>
+    </div>
+  </section>
+</section>
+
+<!--Global shared-->
+<app-loading-spinner></app-loading-spinner>
+<!--Global shared-->

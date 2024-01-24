@@ -1,0 +1,142 @@
+<div class="product-card">
+  <!-- card header starts-->
+  <div class="product-card__header">
+
+    <span class="header__logo-container" [ngClass]="{
+      'games-logo': serviceType == serviceTypeName.games,
+      'music-logo': serviceType == serviceTypeName.music,
+      'tv-logo': serviceType == serviceTypeName.tv,
+      'sports-logo': serviceType == serviceTypeName.sports
+    }">
+      <img loading="lazy" class="card-logo" [src]="productLogo" [alt]="productName">
+    </span>
+
+    <div class="header__link-container">
+
+      <a *ngIf="websiteUrl" [href]="websiteUrl" target="_blank" class="link__button-container--gradiant">
+        <span class='button__icon-container'>
+          <img loading="lazy" src="assets/imgs/icn_web_home.svg" [alt]="'website Icon' | translate">
+        </span>
+        <span>
+          <span class="d-block">{{'Open' | translate}}</span> <b>{{'Website' | translate}}</b>
+        </span>
+      </a>
+
+      <!--SCAN APP-->
+      <ng-container *ngIf="DeviceData.isDesktop">
+        <!--APP STORE-->
+        <a *ngIf="appStoreUrl" (click)="openBarcodeDialog(platformType.iOS, appStoreBarcode )"
+          class="link__button-container--gradiant">
+          <span class='button__icon-container'>
+            <img loading="lazy" src="assets/imgs/icn_app_store_home.svg" alt="AppStore Icon">
+          </span>
+          <span>
+            <span class="d-block">{{'Scan to' | translate}} </span> <b>{{'Download' | translate}}</b>
+          </span>
+        </a>
+        <!--END APP STORE-->
+
+        <!--GOOGLE PLAY STORE-->
+        <a *ngIf="playStoreUrl" (click)="openBarcodeDialog(platformType.Android, playStoreBarcode)"
+          class="link__button-container--gradiant">
+          <span class='button__icon-container'>
+            <img loading="lazy" src="assets/imgs/icn_google_play_home.svg" alt="Play Store Icon">
+          </span>
+          <span>
+            <span class="d-block">{{'Scan to' | translate}} </span> <b>{{'Download' | translate}}</b>
+          </span>
+        </a>
+        <!--END GOOGLE PLAY STORE-->
+
+        <!--HUAWEI STORE-->
+        <a *ngIf="huaweiStoreUrl" (click)="openBarcodeDialog(platformType.Huawei, huaweiStoreBarcode)"
+          class="link__button-container--gradiant">
+          <span class='button__icon-container'>
+            <img loading="lazy" src="assets/imgs/icn_app_store_home.svg" alt="App Gallery Icon">
+          </span>
+          <span>
+            <span class="d-block">{{'Scan to' | translate}} </span> <b>{{'Download' | translate}}</b>
+          </span>
+        </a>
+        <!--END HUAWEI STORE-->
+      </ng-container>
+      <!--SCAN APP END-->
+
+      <!--DOWNLOAD APP-->
+      <ng-container *ngIf="DeviceData.isMobileOrTablet">
+        <a *ngIf="downloadAppData.url" [href]="downloadAppData.url" target="_blank"
+          class="link__button-container--gradiant">
+          <span class='button__icon-container'>
+            <img loading="lazy" [src]="downloadAppData.icon" [alt]="downloadAppData.deviceOS">
+          </span>
+          <span>
+            <span class="d-block">{{'Download' | translate}} </span> <b>{{'APP' | translate}}</b>
+          </span>
+        </a>
+      </ng-container>
+      <!--DOWNLOAD APP END-->
+
+    </div>
+
+  </div>
+  <!-- card header ends-->
+
+  <!-- card Description starts -->
+  <p class="card__description" [class.invisible]="!productDescription">{{(productDescription!.length >= 120) ? (productDescription | slice:0:120) + '...' :
+    productDescription}}</p>
+  <!-- card Description end -->
+
+  <!-- card swiper starts-->
+  <div class="product-card__swiper" [class.invisible]="!productsDTO?.length">
+    <swiper [config]="productSwiperConfig">
+      <ng-template swiperSlide *ngFor="let product of productsDTO">
+        <div class="swiper__product-container">
+          <div class="product__img-container shadow">
+            <img class="img-container__img" loading="lazy"
+              [src]="product.image ? product?.image : 'assets/imgs/img_default_twist.svg'"
+              onerror="this.onerror=null;this.src='assets/imgs/img_default_twist.svg'" alt="Twist Product">
+          </div>
+
+          <div class="product__product-info-group">
+            <h3 class="product-info__title ">{{(product.title.length >=20) ? (product?.title |slice:0:20) + '...' :
+              product?.title }}</h3>
+            <p class="product-info__description" *ngIf="product?.tag">
+              {{(product.tag.length >=20) ? (product?.tag |slice:0:20) + '...' :
+              product?.tag }}</p>
+          </div>
+        </div>
+      </ng-template>
+    </swiper>
+  </div>
+  <!-- card swiper ends -->
+
+  <!-- card footer starts -->
+  <div class="product-card__footer">
+    <div *ngIf="subscriptionsCount">
+      <span>
+        <img loading="lazy" src="assets/imgs/icn_subscribed.svg" alt="Subscribed Icon">
+      </span>
+      <span class="footer__subscribed">{{'You are subscribed into '| translate}} {{subscriptionsCount}}
+        {{ subscriptionsCount > 1 ? ('plans'| translate) : ('plan'| translate)}}
+      </span>
+    </div>
+
+    <div class="d-flex align-items-center" *ngIf="!subscriptionsCount">
+      <span>
+        <img loading="lazy" src="assets/imgs/icn_warning.svg" alt="Subscribed Icon">
+      </span>
+      <span class="footer__unsubscribed">
+        {{'You have no subscription' | translate}}
+      </span>
+    </div>
+
+    <a class="footer-link" (click)="goToPlans()">
+      <strong>{{'Discover plans '| translate}}</strong>
+      <span class="footer-link__icon">
+        <img loading="lazy" src="assets/imgs/icn_arrow_right.svg">
+      </span>
+    </a>
+
+  </div>
+  <!-- card footer ends -->
+</div>

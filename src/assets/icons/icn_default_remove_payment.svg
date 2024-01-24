@@ -1,0 +1,6 @@
+<svg id="icn_default_remove_payment" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="archive-minus">
+    <path id="Vector" d="M11.25,0H3.217A3.224,3.224,0,0,0,0,3.217V14.958c0,1.5,1.075,2.133,2.392,1.408l4.067-2.258a1.765,1.765,0,0,1,1.558,0l4.067,2.258c1.317.733,2.392.1,2.392-1.408V3.217A3.237,3.237,0,0,0,11.25,0ZM9.317,7.833H5.15a.625.625,0,0,1,0-1.25H9.317a.625.625,0,0,1,0,1.25Z" transform="translate(2.767 1.667)" fill="#f7f7f7"/>
+    <path id="Vector-2" data-name="Vector" d="M0,0H20V20H0Z" transform="translate(20 20) rotate(180)" fill="none" opacity="0"/>
+  </g>
+</svg>

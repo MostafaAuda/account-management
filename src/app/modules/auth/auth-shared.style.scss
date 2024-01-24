@@ -1,0 +1,312 @@
+h1 {
+  font-size: 26px;
+  margin-bottom: 8px;
+  color: var(--twist-primary-light);
+}
+
+h2 {
+  font-size: 14px;
+  color: var(--twist-primary-light);
+  margin-bottom: 8px;
+  font-weight: 300;
+
+  @media only screen and (max-width: 1199px) {}
+
+  /* All tablets */
+  @media only screen and (max-width: 991px) {}
+
+  /* All mobile phones */
+  @media only screen and (max-width: 767px) {
+    font-size: 12px;
+  }
+
+  /* Galaxy fold phone only */
+  @media only screen and (max-width: 319px) {}
+}
+
+h6 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+
+  .user-info__img-container {
+    width: 30px;
+    height: 30px;
+    margin-inline-end: 5px;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  span {
+    font-weight: 300;
+  }
+}
+
+.error-msg {
+  font-size: 12px;
+  color: var(--twist-warning);
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  img {
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+    margin-inline-end: 5px;
+  }
+
+  @media only screen and (max-width: 1199px) {}
+
+  /* All tablets */
+  @media only screen and (max-width: 991px) {}
+
+  /* All mobile phones */
+  @media only screen and (max-width: 767px) {
+    font-size: 10px;
+  }
+
+  /* Galaxy fold phone only */
+  @media only screen and (max-width: 319px) {}
+}
+
+form {
+
+  label {
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .form-group {
+    margin-bottom: 25px;
+
+    .input-with-image {
+      position: relative;
+
+      @mixin input-icon {
+        width: 25px;
+        height: 25px;
+        object-fit: contain;
+        position: absolute;
+        top: 10px;
+      }
+
+      .input-icon {
+        @include input-icon();
+        inset-inline-start: 8px;
+      }
+
+      .form-control {
+        height: 45px;
+        font-size: 14px;
+        border-radius: 10px;
+        background-color: var(--twist-secondary);
+        border: 1px solid var(--music-landing-primary);
+        color: var(--twist-primary-light);
+        padding: 0px 12px;
+        padding-inline-start: 40px;
+        box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+
+        &::placeholder {
+          color: var(--twist-primary-light);
+        }
+
+        &:focus {
+          box-shadow: none;
+        }
+
+        &.is-invalid {
+          border: 1px solid var(--twist-warning);
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23FF8A02'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23FF8A02' stroke='none'/%3e%3c/svg%3e");
+        }
+      }
+
+      .password-icon {
+        @include input-icon();
+        inset-inline-end: 30px;
+      }
+    }
+
+    .invalid-feedback {
+      font-size: 12px;
+      color: var(--twist-warning);
+
+      span {
+        display: block;
+      }
+
+      @media only screen and (max-width: 1199px) {}
+
+      /* All tablets */
+      @media only screen and (max-width: 991px) {}
+
+      /* All mobile phones */
+      @media only screen and (max-width: 767px) {
+        font-size: 10px;
+      }
+
+      /* Galaxy fold phone only */
+      @media only screen and (max-width: 319px) {}
+    }
+  }
+
+  @media only screen and (max-width: 1199px) {}
+
+  /* All tablets */
+  @media only screen and (max-width: 991px) {}
+
+  /* All mobile phones */
+  @media only screen and (max-width: 767px) {}
+
+  /* Galaxy fold phone only */
+  @media only screen and (max-width: 319px) {}
+}
+
+hr {
+  margin: 35px 0;
+}
+
+.thirdparty-links-container {
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-inline-end: 15px;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-inline-end: 25px;
+
+      img {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+        box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1199px) {}
+
+  /* All tablets */
+  @media only screen and (max-width: 991px) {}
+
+  /* All mobile phones */
+  @media only screen and (max-width: 767px) {}
+
+  /* Galaxy fold phone only */
+  @media only screen and (max-width: 319px) {
+    flex-direction: column;
+    align-items: unset;
+
+    span {
+      margin-inline-end: unset;
+      margin-block-end: 15px;
+    }
+  }
+}
+
+.user-action-list {
+
+  &.signup-actions {
+    margin: 17px 0 0;
+
+    li {
+      margin: 0;
+    }
+  }
+
+  li {
+    margin-bottom: 25px;
+
+    a {
+      text-decoration: underline;
+      transition: color var(--twist-animate-duration);
+
+      &:hover {
+        color: var(--twist-text-hover);
+      }
+    }
+
+    .otp-seconds {
+      font-weight: bold;
+      display: inline-block;
+      width: 25px;
+      text-align: center;
+    }
+
+  }
+}
+
+:host ::ng-deep .otp-custom-container {
+  .otp-custom-input {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: var(--twist-secondary);
+    color: var(--twist-primary-light);
+    border: none;
+    margin: 0 !important;
+    margin-inline-end: 25px !important;
+  }
+
+  @media only screen and (max-width: 1199px) {}
+
+  /* All tablets */
+  @media only screen and (max-width: 991px) {}
+
+  /* All mobile phones */
+  @media only screen and (max-width: 767px) {
+    .otp-custom-input {
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      margin-inline-end: 8px !important;
+    }
+  }
+
+  /* Galaxy fold phone only */
+  @media only screen and (max-width: 319px) {
+    .otp-custom-input {
+      width: 35px;
+      height: 35px;
+      font-size: 20px;
+      margin-inline-end: 7px !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 1199px) {}
+
+/* All tablets */
+@media only screen and (max-width: 991px) {}
+
+/* All mobile phones */
+@media only screen and (max-width: 767px) {
+  h1 {
+    font-size: 22px;
+  }
+}
+
+/* Galaxy fold phone only */
+@media only screen and (max-width: 319px) {}

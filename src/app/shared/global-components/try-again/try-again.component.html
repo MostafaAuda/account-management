@@ -1,0 +1,10 @@
+<div class="try-again">
+  <div class="try-again__img">
+    <img loading="lazy" src="assets/imgs/warning-sign.svg" [alt]="'error occurred' | translate">
+  </div>
+  <h3>{{'Oops!' | translate}}</h3>
+  <p>{{'This page is not available, please try again' | translate}}</p>
+  <a (click)="tryAgain()" class="btn btn--gradient">
+    {{'Try again' | translate}}
+  </a>
+</div>

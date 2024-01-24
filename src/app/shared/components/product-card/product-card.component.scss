@@ -1,0 +1,279 @@
+.product-card {
+  background: var(--twist-dark);
+  border-radius: 15px;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+  height: 100%;
+
+  p,
+  span {
+    color: var(--twist-secondary-gray);
+  }
+
+  /* Header */
+  .product-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+
+    .header__logo-container {
+      display: flex;
+      align-items: center;
+      height: 30px;
+
+      @mixin logo-border($border-color) {
+        content: '';
+        background-color: $border-color;
+        border-radius: 15px;
+        height: 100%;
+        width: 3px;
+      }
+
+      &.music-logo::before {
+        @include logo-border(var(--twist-music-blue));
+      }
+
+      &.games-logo::before {
+        @include logo-border(var(--twist-games-red));
+      }
+
+      &.tv-logo::before {
+        @include logo-border(var(--twist-tv-purple));
+      }
+
+      &.sports-logo::before {
+        @include logo-border(var(--twist-sports-sky-blue));
+      }
+    }
+
+    .header__link-container {
+      display: flex;
+      flex-wrap: nowrap;
+
+      .link__button-container--gradiant {
+        display: flex;
+        background: var(--twist-gradient-horizontal);
+        padding: 0 8px;
+        margin-inline-start: 5px;
+        border-radius: 17px;
+        align-items: center;
+        font-size: 10px;
+        line-height: 1.2;
+        height: 30px;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+
+        .button__icon-container {
+          width: 20px;
+          height: 20px;
+          margin-inline-end: 4px;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+
+          @media only screen and (max-width: 1199px) {}
+
+          /* All tablets */
+          @media only screen and (max-width: 991px) {
+            width: 18px;
+            height: 18px;
+          }
+
+          /* All mobile phones */
+          @media only screen and (max-width: 767px) {
+            width: 16px;
+            height: 16px;
+          }
+
+          /* Galaxy fold phone only */
+          @media only screen and (max-width: 319px) {}
+
+        }
+
+        /* Media Queries for RTL - LTR */
+
+        /* Screen between tablets and large screens */
+        @media only screen and (max-width: 1199px) {}
+
+        /* All tablets */
+        @media only screen and (max-width: 991px) {
+          font-size: 8px;
+        }
+
+        /* All mobile phones */
+        @media only screen and (max-width: 767px) {}
+
+        /* Galaxy fold phone only */
+        @media only screen and (max-width: 319px) {}
+      }
+    }
+
+    .card-logo {
+      height: 100%;
+      margin-inline-start: 5px;
+    }
+
+  }
+
+  /* Description */
+  .card__description {
+    overflow: hidden;
+    height: 50px;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+
+    /* Media Queries for RTL - LTR */
+
+    /* Screen between tablets and large screens */
+    @media only screen and (max-width: 1199px) {}
+
+    /* iPad Pro */
+    @media only screen and (max-width: 1024px) {
+      height: 65px;
+    }
+
+    /* All tablets */
+    @media only screen and (max-width: 991px) {
+      height: 85px;
+    }
+
+    /* All mobile phones */
+    @media only screen and (max-width: 767px) {
+      height: auto;
+    }
+
+    /* Galaxy fold phone only */
+    @media only screen and (max-width: 319px) {}
+
+  }
+
+  /* Swiper */
+  .product-card__swiper {
+    margin-inline-start: 15px;
+
+    .swiper__product-container {
+      overflow: hidden;
+
+      .product__img-container {
+        overflow: hidden;
+        border-radius: 15px;
+        margin-bottom: 10px;
+        border: solid .5px var(--twist-gray);
+
+        .img-container__img {
+          aspect-ratio: 1.5/1;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .product__product-info-group {
+        .product-info__title {
+          margin-top: 5px;
+          font-size: 12px;
+          font-weight: 200;
+        }
+
+        .product-info__description {
+          font-size: 10px;
+        }
+      }
+
+      /*--------------------------------------------------------------------------------------------------------------------*/
+      /* Media Queries for RTL - LTR */
+
+      /* Screen between tablets and large screens */
+      @media only screen and (max-width: 1199px) {}
+
+      /* All tablets */
+      @media only screen and (max-width: 991px) {}
+
+      /* All mobile phones */
+      @media only screen and (max-width: 767px) {
+        &:hover {
+          .img-container__img {
+            transform: unset;
+          }
+        }
+      }
+
+      /* Galaxy fold phone only */
+      @media only screen and (max-width: 319px) {}
+    }
+  }
+
+  /* Footer */
+  .product-card__footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    font-size: 14px;
+
+    .footer__subscribed {
+      color: var(--twist-green);
+      margin-inline-start: 5px;
+    }
+
+    .footer__unsubscribed {
+      color: var(--twist-yellow);
+      margin-inline-start: 5px;
+    }
+
+    .footer-link {
+      display: flex;
+      align-items: center;
+      transition: transform var(--twist-animate-duration);
+
+      strong {
+        transition: color var(--twist-animate-duration);
+      }
+
+      &:hover {
+        transform: translateX(5px);
+      }
+
+      strong {
+        font-size: 14px;
+      }
+
+      /* Media Queries for RTL - LTR */
+
+      /* Screen between tablets and large screens */
+      @media only screen and (max-width: 1199px) {}
+
+      /* All tablets */
+      @media only screen and (max-width: 991px) {
+        margin-top: 10px;
+      }
+
+      /* All mobile phones */
+      @media only screen and (max-width: 767px) {
+        font-size: 14px;
+      }
+
+      /* Galaxy fold phone only */
+      @media only screen and (max-width: 319px) {}
+    }
+
+    /* Media Queries for RTL - LTR */
+
+    /* Screen between tablets and large screens */
+    @media only screen and (max-width: 1199px) {}
+
+    /* All tablets */
+    @media only screen and (max-width: 991px) {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    /* All mobile phones */
+    @media only screen and (max-width: 767px) {}
+
+    /* Galaxy fold phone only */
+    @media only screen and (max-width: 319px) {}
+  }
+}

@@ -1,0 +1,14 @@
+<svg id="icn_payment_credit_card" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <circle id="Ellipse_1439" data-name="Ellipse 1439" cx="15" cy="15" r="15" fill="#f7f7f7" opacity="0.099"/>
+  <g id="vuesax_twotone_card" data-name="vuesax/twotone/card" transform="translate(-486 -502)">
+    <g id="card" transform="translate(492 508)">
+      <g id="Group_571" data-name="Group 571" transform="translate(1.542 6.559)" opacity="0.4">
+        <path id="Vector" d="M0,0H15.425" fill="none" stroke="#f7f7f7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        <path id="Vector-2" data-name="Vector" d="M0,0H1.542" transform="translate(3.085 6.17)" fill="none" stroke="#f7f7f7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        <path id="Vector-3" data-name="Vector" d="M0,0H3.085" transform="translate(6.556 6.17)" fill="none" stroke="#f7f7f7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      </g>
+      <path id="Vector-4" data-name="Vector" d="M3.424,0h8.568c2.746,0,3.432.679,3.432,3.386V9.718c0,2.707-.686,3.386-3.424,3.386H3.424C.686,13.111,0,12.432,0,9.725V3.386C0,.679.686,0,3.424,0Z" transform="translate(1.542 2.703)" fill="none" stroke="#f7f7f7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="Vector-5" data-name="Vector" d="M0,0H18.51V18.51H0Z" fill="none" opacity="0"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,79 @@
+<div class="payment-method shadow" [class.primary-method]="primaryMethod">
+  <!-------------------payment-card__header---------------------->
+  <div class="payment-method__header">
+    <!--header-name-->
+    <div class="payment-method__header-title" [class.invisible]="!paymentType">
+      <div class="header-title__img">
+        <img *ngIf="paymentType == paymentMethods.CREADITCARD" src="assets/icons/icn_payment_credit_card.svg"
+          [alt]="'Credit card' | translate">
+        <img *ngIf="paymentType == paymentMethods.LOYALITYPOINTS" src="assets/icons/icn_payment_loyaltypoints.svg"
+          [alt]="'Loyality points icon' | translate">
+        <img *ngIf="paymentType == paymentMethods.DCB" src="assets/icons/icn_mobile_number_home.svg"
+          [alt]="'Etisalat cash icon' | translate">
+        <img *ngIf="paymentType == paymentMethods.COINS" src="assets/icons/icn_payment_loyaltypoints.svg"
+          [alt]="'Coins icon' | translate">
+      </div>
+      <h5 *ngIf="paymentType == paymentMethods.CREADITCARD">{{'Credit card' | translate}}</h5>
+      <h5 *ngIf="paymentType == paymentMethods.LOYALITYPOINTS">{{'loyality points' | translate}}</h5>
+      <h5 *ngIf="paymentType == paymentMethods.DCB">{{'DCB' | translate}}</h5>
+      <h5 *ngIf="paymentType == paymentMethods.COINS">{{'coins' | translate}}</h5>
+    </div>
+    <!--./header-name-->
+
+    <!--header-dropdown-->
+    <a [matMenuTriggerFor]="manageMenu" class="payment-method__header-dropdown" [class.d-none]="hideManage"
+      *ngIf="!primaryMethod">
+      <div class="payment-method__header-dropdown--icon">
+        <img src="assets/imgs/icn_manage.svg">
+      </div>
+    </a>
+
+    <mat-menu class="manage-menu" #manageMenu="matMenu" [hasBackdrop]="true" [backdropClass]="'manage-menu__backdrop'">
+      <a mat-menu-item class="menu-item" (click)="onSetDefault()">
+        <div class="menu-item__img-container">
+          <img src="assets/icons/icn_default_add_payment.svg" [alt]="'Add default icon' | translate">
+        </div>
+        <span class="menu-item__title">{{"Set as default" | translate}}</span>
+      </a>
+      <a mat-menu-item class="menu-item" (click)="onRemove()">
+        <div class="menu-item__img-container">
+          <img src="assets/icons/icn_remove_payment.svg" [alt]="'Remove Icon' | translate">
+        </div>
+        <span class="menu-item__title">{{"Remove" | translate}}</span>
+      </a>
+    </mat-menu>
+    <!--./header-dropdown-->
+  </div>
+  <!-------------------./payment-card__header---------------------->
+
+  <!------------------payment-card__content--------------->
+  <strong class="payment-method__number-detail" [class.invisible]="!phoneOrCardNumber">
+    {{phoneOrCardNumber}}
+  </strong>
+  <!------------------./payment-card__content------------->
+
+
+  <!------------------payment-card__footer----------------->
+  <div class="payment-method-footer">
+    <small *ngIf="paymentType == paymentMethods.CREADITCARD">
+      {{"Expires in " | translate }}
+      {{expiryDate | date}}
+    </small>
+    <small *ngIf="paymentType == paymentMethods.COINS">
+      {{"Worth " | translate }}
+      {{expiryDate}}
+    </small>
+    <small *ngIf="paymentType == paymentMethods.DCB">
+      {{"Mobile Number: " | translate }}
+      {{expiryDate }}
+    </small>
+
+    <div class="footer__default-method" *ngIf="primaryMethod">
+      <small>{{"Default Method" | translate}}</small>
+      <div class="footer__default-method--icon">
+        <img src="assets/icons/icn_default_check.svg" [alt]="'default method icon' | translate">
+      </div>
+    </div>
+  </div>
+  <!------------------./payment-card__footer----------------->
+</div>

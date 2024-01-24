@@ -1,0 +1,75 @@
+/* Main Style */
+
+/* Imports */
+
+/* Project colors and Variables*/
+@import "./app/shared/styles/color-palette.scss";
+@import "./app/shared/styles/variables.scss";
+
+/* Project fonts */
+/* Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+
+/* Cairo Font */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap');
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Global styles */
+@import "./app/shared/styles/global-styles.scss";
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Global classes */
+@import "./app/shared/styles/font-weights.scss";
+@import "./app/shared/styles/font-sizes.scss";
+@import "./app/shared/styles/rtl-styles.scss";
+
+/* Abtracted classes */
+@import "./app/shared/styles/abstract-material.scss";
+@import "./app/shared/styles/abstract-swiper.scss";
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Media Queries for RTL - LTR */
+
+/* Screen between tablets and large screens */
+@media only screen and (max-width: 1199px) {}
+
+/* All tablets */
+@media only screen and (max-width: 991px) {
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+/* All mobile phones */
+@media only screen and (max-width: 767px) {
+  ::-webkit-scrollbar {
+    height: 3px;
+  }
+}
+
+/* Galaxy fold phone only */
+@media only screen and (max-width: 319px) {}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Scrollbar styles */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: var(--twist-primary);
+  border: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--twist-secondary);
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.8;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/

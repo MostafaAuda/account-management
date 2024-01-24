@@ -1,0 +1,220 @@
+.general-settings {
+
+  .group {
+    display: flex;
+    flex-direction: column;
+    border-bottom: .5px solid rgba(128, 128, 128, 0.5);
+    padding-block: 24px;
+
+    h4 {
+      margin-bottom: 16px;
+    }
+
+    //lang grp
+    .lang-grp__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .language-text {
+      display: flex;
+
+      img {
+        margin-inline-end: 12px;
+      }
+    }
+
+    .switch-lang__text {
+      font-size: 14px;
+      padding: 7px 14px;
+
+      /*--------------------------------------------------------------------------------------------------------------------*/
+      /* Media Queries for RTL - LTR */
+
+      /* Screen between tablets and large screens */
+      @media only screen and (max-width: 1199px) {}
+
+      /* All tablets */
+      @media only screen and (max-width: 991px) {}
+
+      /* All mobile phones */
+      @media only screen and (max-width: 767px) {}
+
+      /* Galaxy fold phone only */
+      @media only screen and (max-width: 319px) {
+        padding: 7px;
+      }
+    }
+
+
+
+    //social accounts
+    .social-account__links {
+      display: flex;
+
+      .social-account-link {
+        color: var(--twist-black);
+        background-color: transparent;
+        color: var(--twist-white);
+        border: 1px solid var(--twist-white);
+        padding: 9px 8px;
+        border-radius: 50px;
+        margin-inline-end: 17px;
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+
+        .social-link__img-container {
+          width: 18px;
+          margin-inline-end: 4px;
+
+          img {
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+
+        &:hover {
+          box-shadow: 0 .125rem .25rem white;
+        }
+
+        &.connected {
+          background-color: var(--twist-white);
+          color: var(--twist-black);
+        }
+
+        &.fb-connected {
+          background-color: var(--twist-facebook);
+          border: 0;
+        }
+      }
+
+
+
+
+      /*--------------------------------------------------------------------------------------------------------------------*/
+      /* Media Queries for RTL - LTR */
+
+      /* Screen between tablets and large screens */
+      @media only screen and (max-width: 1199px) {}
+
+      /* All tablets */
+      @media only screen and (max-width: 991px) {}
+
+      /* All mobile phones */
+      @media only screen and (max-width: 767px) {
+        flex-direction: column;
+
+        .social-account-link {
+          margin-block-end: 24px;
+        }
+
+      }
+
+      /* Galaxy fold phone only */
+      @media only screen and (max-width: 319px) {}
+    }
+
+
+    //acount settings & about twist
+    .account-setting__actions,
+    .about-list {
+
+      li:first-child {
+        margin-block-end: 27px;
+      }
+
+      .account-setting_action,
+      .about-link {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        width: fit-content;
+        transition: color var(--twist-animate-duration);
+
+        &:hover {
+          color: var(--twist-text-hover)
+        }
+      }
+
+      .link_img-container {
+        margin-inline-end: 12px;
+        width: 20px;
+
+        img {
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+
+    &.about-list-grp {
+      border: 0;
+    }
+
+    /*--------------------------------------------------------------------------------------------------------------------*/
+    /* Media Queries for RTL - LTR */
+
+    /* Screen between tablets and large screens */
+    @media only screen and (max-width: 1199px) {}
+
+    /* All tablets */
+    @media only screen and (max-width: 991px) {}
+
+    /* All mobile phones */
+    @media only screen and (max-width: 767px) {
+      &.about-list-grp {
+        border-bottom: .5px solid rgba(128, 128, 128, 0.5);
+      }
+    }
+
+    /* Galaxy fold phone only */
+    @media only screen and (max-width: 319px) {}
+  }
+
+}
+
+//signout btn
+.sign-out {
+  margin-top: 58px;
+  margin-bottom: 26px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  transition: color var(--twist-animate-duration), margin var(--twist-animate-duration);
+
+  .link_img-container {
+    margin-inline-end: 12px;
+    width: 20px;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &:hover {
+    color: var(--twist-text-hover);
+    margin-inline-start: 17px;
+  }
+
+
+  /*--------------------------------------------------------------------------------------------------------------------*/
+  /* Media Queries for RTL - LTR */
+
+  /* Screen between tablets and large screens */
+  @media only screen and (max-width: 1199px) {}
+
+  /* All tablets */
+  @media only screen and (max-width: 991px) {}
+
+  /* All mobile phones */
+  @media only screen and (max-width: 767px) {
+    margin-top: 26px;
+  }
+
+  /* Galaxy fold phone only */
+  @media only screen and (max-width: 319px) {}
+}

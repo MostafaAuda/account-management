@@ -1,0 +1,18 @@
+<div class="confirmation-dialog">
+  <div mat-dialog-content>
+    <img *ngIf="data.icon === IconTypes.Success" src="assets/imgs/icn_confirmation_success.svg"
+      [alt]="'Success Confirmation icon' | translate">
+    <img *ngIf="data.icon === IconTypes.Disapprove" src="assets/imgs/icn_confirmation_popup.svg"
+      [alt]="'Error Confirmation icon' | translate">
+    <img *ngIf="data.icon === IconTypes.Info" src="assets/imgs/warning-sign.svg"
+      [alt]="'Info Confirmation icon' | translate">
+  </div>
+  <h1 mat-dialog-title>
+    {{data.title}}
+  </h1>
+  <div mat-dialog-actions>
+    <button mat-button
+      [mat-dialog-close]="true">{{data.icon === IconTypes.Info ? ('Okay' | translate) : ('Confirm' | translate)}}</button>
+    <a mat-dialog-close *ngIf="data.icon !== IconTypes.Info">{{'Cancel' | translate}}</a>
+  </div>
+</div>

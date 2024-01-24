@@ -1,0 +1,70 @@
+<app-page-title *ngIf="(viewState |as : PlansStateReady)?.serviceName"
+  [title]="(viewState |as : PlansStateReady)?.serviceName + (' Plans' | translate )"></app-page-title>
+
+<ng-container [ngSwitch]="viewState.name">
+  <ng-container *ngSwitchCase="PlansStateName.PlansReadyState">
+    <section class="plans-nav" *ngIf="(viewState |as : PlansStateReady).categories?.length !== 1; else allPlansTitle">
+      <swiper [config]="planTabsSwiper">
+        <ng-container *ngFor="let category of (viewState |as : PlansStateReady)?.categories">
+          <ng-template swiperSlide>
+            <a class="plans-nav__tab" (click)="onFilterCategory(category.id)"
+              [ngClass]="{'active':(viewState |as : PlansStateReady).activeCategory?.id == category?.id}">{{category?.name}}</a>
+          </ng-template>
+        </ng-container>
+      </swiper>
+    </section>
+
+    <ng-template #allPlansTitle>
+      <section class="plans-nav">
+        <h4 class="section-heading m-0">{{'All Plans' | translate}}</h4>
+      </section>
+    </ng-template>
+
+    <section class="bundles-section">
+      <div class="row">
+        <div class="col-12 col-md-4 col-lg-3 custom-margin"
+          *ngFor="let plan of (viewState |as : PlansStateReady)?.bundles">
+          <app-plan-card [serviceType]="(viewState |as : PlansStateReady)?.serviceType" [planName]="plan?.name"
+            [planDescription]="plan?.description" [borderColor]="plan?.borderColor"
+            [linearGradientTop]="plan?.linearGradientTop" [linearGradientBottom]="plan?.linearGradientBottom"
+            [planPrice]="plan?.price" [startDate]="plan?.startDate" [endDate]="plan?.endDate"
+            [isSubscribed]="plan?.isSubscriped" (onSubscribe)="onPlanSubscribe(plan?.id, plan?.name)"
+            (onUnsubscribe)="onPlanUnsubscribe(plan?.id, plan?.name)"></app-plan-card>
+        </div>
+      </div>
+    </section>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="PlansStateName.PlansEmptyState">
+    <app-empty-data [Title]="'Nothing here to show!' | translate"
+      [Description]="'No Plans to show, come again later'"></app-empty-data>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="PlansStateName.PlansProcessingState">
+
+    <ngx-skeleton-loader class="main-heading-skeleton" count="1"></ngx-skeleton-loader>
+
+    <ngx-skeleton-loader class="section-padding" count="1" [theme]="{
+      'height.px': '28',
+      'margin-bottom.px': '24'
+    }"></ngx-skeleton-loader>
+
+    <div class="row">
+      <div class="col-12 col-md-4 col-lg-3 custom-margin" *ngFor="let item of [].constructor(4)">
+        <ngx-skeleton-loader count="1" [theme]="{
+        'height.px': '302'
+      }"></ngx-skeleton-loader>
+      </div>
+
+    </div>
+
+  </ng-container>
+
+  <ng-container *ngSwitchCase="PlansStateName.PlansDisconnectedState">
+    <app-no-connection></app-no-connection>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="PlansStateName.PlansErrorState">
+    <app-try-again (onTryAgain)="onRetry()"></app-try-again>
+  </ng-container>
+</ng-container>

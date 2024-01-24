@@ -1,0 +1,68 @@
+<h1>
+  {{"Welcome to Twist " | translate}} <br>
+  {{" Entertainment Space" | translate}}
+</h1>
+
+<div class="error-msg" *ngIf="formError">
+  <img src="assets/icons/icn_error.svg" [alt]="'Error icon' | translate">
+  <span>
+    {{formError}}
+  </span>
+</div>
+
+<form [formGroup]="loginVerificationForm" (ngSubmit)="verifyLoginType()" *ngIf="loginVerificationForm"
+  (keydown)="submitListen($event)">
+  <div class="form-group">
+    <label for="emailnphone">{{'Email address or mobile number' | translate}}</label>
+    <div class="input-with-image">
+      <img class="input-icon" src="assets/icons/icn_user_id_signin.svg" [alt]="'User icon' | translate">
+      <input #emailPhoneInput autocomplete="username" (keypress)="allowNumbersOnly($event)"
+        (keyup)="validateLoginType()" id="emailnphone" type="text" class="form-control"
+        placeholder="{{'Email address or mobile number' | translate}}" formControlName="emailnphone"
+        [ngClass]="{ 'is-invalid': loginVerificationFormControls['emailnphone'].errors && startValidating, 'is-valid': !loginVerificationFormControls['emailnphone'].errors}">
+
+      <small *ngIf="loginVerificationFormControls['emailnphone'].errors" class="invalid-feedback">
+        <span *ngIf="loginVerificationFormControls['emailnphone'].errors['pattern'] && activePhoneValidation">
+          {{'Please provide a valid mobile number' | translate}}
+        </span>
+
+        <span *ngIf="loginVerificationFormControls['emailnphone'].errors['email'] && activeEmailValidation">
+          {{'Please provide a valid email address' | translate}}
+        </span>
+
+        <span
+          *ngIf="activePhoneValidation && loginVerificationFormControls['emailnphone'].errors['maxlength'] || loginVerificationFormControls['emailnphone'].errors['minlength']">
+          {{'Mobile number must be at least 11 numbers' | translate}}
+        </span>
+      </small>
+    </div>
+  </div>
+  <button class="btn btn--gradient w-100" type="submit" [disabled]="!loginVerificationForm.valid || is_submitting">
+    {{'Continue' | translate}}
+  </button>
+</form>
+
+<hr>
+
+<div class="thirdparty-links-container">
+  <span>
+    {{"Continue with" | translate}}
+  </span>
+  <ul>
+    <li>
+      <a>
+        <img src="assets/icons/icn_facebook_signin.svg" [alt]="'Facebook icon' | translate">
+      </a>
+    </li>
+    <li>
+      <a>
+        <img src="assets/icons/icn_apple_signin.svg" [alt]="'Apple icon' | translate">
+      </a>
+    </li>
+    <li>
+      <a>
+        <img src="assets/icons/icn_google_signin.svg" [alt]="'Google icon' | translate">
+      </a>
+    </li>
+  </ul>
+</div>

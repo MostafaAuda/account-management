@@ -1,0 +1,14 @@
+<div class="barcode-modal__title">
+  <h1> {{'Download mobile app' | translate}}</h1>
+  <a mat-dialog-close class="close-dialog-btn"><img src="assets/imgs/icn_close_circle.png"
+      [alt]="'Close Button' | translate"></a>
+</div>
+
+<div mat-dialog-content>
+  <h6>{{'Twist music app' | translate}}</h6>
+  <div class="barcode-img">
+    <img loading="lazy" [src]="data?.barcode ? data?.barcode  : 'assets/imgs/icn_confirmation_success.svg'"
+      [alt]="'Barcode' | translate">
+  </div>
+  <p>{{'Scan QR code to download from ' | translate}} {{data?.platformType}}</p>
+</div>

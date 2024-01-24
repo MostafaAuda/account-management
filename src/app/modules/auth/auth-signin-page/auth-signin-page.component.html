@@ -1,0 +1,108 @@
+<h1>
+  {{"Welcome Back" | translate}}
+</h1>
+
+<ng-container [ngSwitch]="viewState.name">
+  <ng-container *ngSwitchCase="SigninStateName.LoginByMailState">
+    <h2>
+      {{"Please enter your password for" | translate}}
+    </h2>
+
+    <div class="user-info">
+      <div class="user-info__img-container">
+        <img src="assets/icons/icn_email_address_home.svg" [alt]="'Mail icon' | translate">
+      </div>
+      <span>
+        {{userEntryData.entryID}}
+      </span>
+    </div>
+
+    <div class="error-msg" *ngIf="formError">
+      <img src="assets/icons/icn_error.svg" [alt]="'Error icon' | translate">
+      <span>
+        {{formError}}
+      </span>
+    </div>
+
+    <form [formGroup]="signinForm" (ngSubmit)="onLoginByMail()" *ngIf="signinForm" (keydown)="submitListen($event)">
+      <div class="form-group">
+        <label for="password">{{'Password' | translate}}</label>
+        <div class="input-with-image">
+          <img class="input-icon" src="assets/icons/vuesax-linear-lock.svg" [alt]="'User icon' | translate">
+          <input id="password" autocomplete="current-password" [type]=" showPassword ? 'text' : 'password'"
+            class="form-control" placeholder="{{'Enter your password' | translate}}" formControlName="password"
+            [ngClass]="{ 'is-invalid': signinFormControls['password'].errors && signinFormControls['password'].value?.length, 'is-valid': !signinFormControls['password'].errors}">
+          <a (click)="onShowPassword()" *ngIf="signinFormControls['password'].value?.length">
+            <img class="password-icon"
+              [src]="showPassword ? 'assets/icons/vuesax-bold-eye-slash.svg' : 'assets/icons/vuesax-bold-eye.svg'"
+              [alt]="showPassword ? 'Hide Password Icon' : 'Show Password Icon' | translate">
+          </a>
+          <small *ngIf="signinFormControls['password'].errors" class="invalid-feedback">
+            <span *ngIf="signinFormControls['password'].errors['minlength']">
+              {{'Password must be at least 8 characters' | translate}}
+            </span>
+          </small>
+        </div>
+      </div>
+      <button class="btn btn--gradient w-100" type="submit" [disabled]="!signinForm.valid || is_submitting">
+        {{'Continue' | translate}}
+      </button>
+    </form>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="SigninStateName.LoginByPhoneState">
+    <h2>
+      {{"Enter the verification code we just sent to" | translate}}
+    </h2>
+
+    <div class="user-info">
+      <div class="user-info__img-container">
+        <img src="assets/icons/icn_mobile_number_home.svg" [alt]="'Phone icon' | translate">
+      </div>
+      <span>
+        {{userEntryData.entryID}}
+      </span>
+    </div>
+
+    <div class="error-msg" *ngIf="otpError">
+      <img src="assets/icons/icn_error.svg" [alt]="'Error icon' | translate">
+      <span>
+        {{otpError}}
+      </span>
+    </div>
+
+    <h6>
+      {{'Verification Code' | translate}}
+    </h6>
+    <div class="otp-container">
+      <ng-otp-input (onInputChange)="onLoginByPhone($event)" [config]="otpConfig"></ng-otp-input>
+    </div>
+  </ng-container>
+</ng-container>
+
+<hr>
+
+<ul class="user-action-list">
+  <li *ngIf="viewState.name == SigninStateName.LoginByPhoneState">
+    <span *ngIf="!otpSettings.resendOTP">
+      {{"Didn’t receive the Code? try again after" | translate}}
+      <span class="otp-seconds">{{otpSettings.seconds}}</span>
+      {{"Seconds" | translate}}
+    </span>
+
+    <span *ngIf="otpSettings.resendOTP">
+      {{"Didn’t receive the Code?" | translate}}
+      <a (click)="onResendOTP()">{{"Send it again" | translate}}</a>
+    </span>
+  </li>
+  <li *ngIf="viewState.name == SigninStateName.LoginByMailState">
+    <a (click)="onForgotPasswordClick()">
+      {{'Forgot Password' | translate}}
+    </a>
+  </li>
+  <li>
+    <a (click)="onBackToVerificationClick()">
+      {{'Sign in using different way' | translate}}
+    </a>
+  </li>
+</ul>

@@ -1,0 +1,25 @@
+section {
+  position: relative;
+  background-color: var(--twist-primary);
+  color: var(--twist-white);
+  padding-inline: 20px;
+  padding-top: 40px;
+  border-radius: 15px;
+
+
+  .mat-typography {
+    width: 100%;
+    background-color: var(--twist-secondary);
+    padding: 16px;
+    font-size: 14px;
+    border-radius: 15px 15px 0 0;
+  }
+
+  .close-dialog-btn {
+    position: absolute;
+    top: 45px;
+    inset-inline-end: 0;
+    margin-inline-end: 20px;
+  }
+
+}

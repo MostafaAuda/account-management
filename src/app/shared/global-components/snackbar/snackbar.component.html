@@ -1,0 +1,9 @@
+<div class="snackbar-container" (click)="snackBarRef.dismissWithAction()">
+  <img *ngIf="data.type === snackbarType.Success" src="assets/imgs/icn_confirmation_success.svg"
+    [alt]="'Success Confirmation icon' | translate">
+  <img *ngIf="data.type === snackbarType.Error" src="assets/imgs/icn_confirmation_popup.svg"
+    [alt]="'Error Confirmation icon' | translate">
+  <img *ngIf="data.type === snackbarType.Info" src="assets/imgs/warning-sign.svg"
+    [alt]="'Info Confirmation icon' | translate">
+  <span>{{data.message}}</span>
+</div>

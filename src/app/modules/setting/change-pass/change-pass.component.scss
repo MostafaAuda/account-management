@@ -1,0 +1,71 @@
+@import"../update-user-Info/update-user-info.component.scss";
+
+section {
+  .input-with-image {
+    position: relative;
+
+    .form-control {
+      padding-inline-start: 40px;
+    }
+
+    .input-icon {
+      width: 25px;
+      height: 25px;
+      object-fit: contain;
+      position: absolute;
+      inset-inline-start: 8px;
+      top: 10px;
+    }
+
+    .card-placeholder__img {
+      inset-inline-end: 0;
+      width: 25px;
+      height: 25px;
+      object-fit: contain;
+      position: absolute;
+      inset-inline-end: 8px;
+      top: 10px;
+
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+
+
+
+
+
+  .button-container {
+    margin-top: 40px;
+
+    button {
+      border: 0;
+      margin-inline-end: 24px;
+      padding: 12px 50px;
+    }
+  }
+
+
+  /*--------------------------------------------------------------------------------------------------------------------*/
+  /* Media Queries for RTL - LTR */
+
+  /* Screen between tablets and large screens */
+  @media only screen and (max-width: 1199px) {}
+
+  /* All tablets */
+  @media only screen and (max-width: 991px) {}
+
+  /* All mobile phones */
+  @media only screen and (max-width: 767px) {
+    .form-input-group {
+      width: 100%;
+    }
+  }
+
+  /* Galaxy fold phone only */
+  @media only screen and (max-width: 319px) {}
+
+}

@@ -1,0 +1,11 @@
+<svg id="icn_mobile_number_home" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="Group_24927" data-name="Group 24927" transform="translate(-355 -155)">
+    <circle id="Ellipse_1439" data-name="Ellipse 1439" cx="15" cy="15" r="15" transform="translate(355 155)" fill="#f7f7f7" opacity="0.099"/>
+  </g>
+  <g id="vuesax_twotone_mobile" data-name="vuesax/twotone/mobile" transform="translate(-104 -377.667)">
+    <g id="mobile" transform="translate(112 384)">
+      <path id="Vector" d="M14.134,4.417V13.25c0,3.533-.883,4.417-4.417,4.417h-5.3C.883,17.667,0,16.784,0,13.25V4.417C0,.883.883,0,4.417,0h5.3C13.25,0,14.134.883,14.134,4.417Z" fill="none" stroke="#f7f7f7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="Vector-2" data-name="Vector" d="M2.738,1.369A1.369,1.369,0,1,1,1.369,0,1.369,1.369,0,0,1,2.738,1.369Z" transform="translate(5.698 12.367)" fill="none" stroke="#f7f7f7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" opacity="0.4"/>
+    </g>
+  </g>
+</svg>

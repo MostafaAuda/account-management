@@ -1,0 +1,9 @@
+<svg id="icn_default_check" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+  <g id="icn_default_check-2" data-name="icn_default_check" transform="translate(-108 -189)" opacity="0.2">
+    <g id="archive-tick" transform="translate(108 189)">
+      <path id="Vector" d="M9.563,0H2.734A2.74,2.74,0,0,0,0,2.734v9.98c0,1.275.914,1.813,2.033,1.2l3.457-1.92a1.5,1.5,0,0,1,1.325,0l3.457,1.92c1.119.623,2.033.085,2.033-1.2V2.734A2.751,2.751,0,0,0,9.563,0Z" transform="translate(2.352 1.417)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="Vector-2" data-name="Vector" d="M0,1.771,1.063,2.833,3.9,0" transform="translate(6.793 6.021)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="Vector-3" data-name="Vector" d="M0,0H17V17H0Z" fill="none" opacity="0"/>
+    </g>
+  </g>
+</svg>

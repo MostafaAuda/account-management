@@ -1,0 +1,46 @@
+.no-connection {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .no-connection__img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  h3 {
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  /*--------------------------------------------------------------------------------------------------------------------*/
+  /* Media Queries for RTL - LTR */
+
+  /* Screen between tablets and large screens */
+  @media only screen and (max-width: 1199px) {}
+
+  /* All tablets */
+  @media only screen and (max-width: 991px) {}
+
+  /* All mobile phones */
+  @media only screen and (max-width: 767px) {
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+
+  /* Galaxy fold phone only */
+  @media only screen and (max-width: 319px) {}
+}

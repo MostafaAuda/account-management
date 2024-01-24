@@ -1,0 +1,82 @@
+<ng-container [ngSwitch]="viewState.name">
+  <ng-container *ngSwitchCase="PlansSubscriptionsStateName.PlansSubscriptionsStateReady">
+    <app-page-title [title]="'Plans & Subscriptions' | translate"></app-page-title>
+    <!-- subscriptions container starts -->
+    <section class="my-subscriptions">
+      <h4 class="section-heading">{{'My subscription' | translate}}</h4>
+      <ng-container
+        *ngIf="(viewState | as : PlansSubscriptionsStateReady).userSubscriptions.length; else noUserSubscriptions">
+        <swiper [config]="subscriptionsSwiper">
+          <ng-container
+            *ngFor="let subscription of  (viewState | as : PlansSubscriptionsStateReady)?.userSubscriptions">
+            <ng-template swiperSlide>
+              <app-subscription-card [subscriptionID]="subscription?.id" [serviceType]="subscription?.serviceType"
+                [planTypeID]="subscription?.planTypeID" [bundleID]="subscription?.bundleID"
+                [bundle]="subscription?.bundle" [price]="subscription?.price"
+                [billingDate]="subscription?.nextBillingDate"
+                (viewPlanDetails)="goViewPlanDetails(subscription?.serviceType, subscription?.planTypeID)"
+                (cancelSubscription)="onCancelSubscription(subscription?.bundleID, subscription?.bundle)"></app-subscription-card>
+            </ng-template>
+          </ng-container>
+        </swiper>
+      </ng-container>
+
+      <ng-template #noUserSubscriptions>
+        <div class="empty-reponse">
+          <span>{{'You have no subscriptions, explore the plans below' | translate}}</span>
+        </div>
+      </ng-template>
+    </section>
+    <!-- subscriptions container ends -->
+
+    <!-- plans container starts -->
+    <section class="plans-section section-padding">
+      <h4 class="section-heading">{{'All plans' | translate}}</h4>
+      <ng-container *ngIf="(viewState | as : PlansSubscriptionsStateReady).plans.length; else noPlans">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-12 mb-4"
+            *ngFor="let plan of  (viewState | as : PlansSubscriptionsStateReady)?.plans">
+            <app-service-card class="w-100" [serviceID]="plan?.id" [serviceType]="plan?.serviceType"
+              [totalPlans]="plan?.totalPlans" [serviceDescription]="plan?.description"
+              (discoverPlans)="goToDiscoverPlans(plan?.serviceType)">
+            </app-service-card>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-template #noPlans>
+        <div class="empty-response">
+          <span>{{'No plans available at the moment, check again later.' | translate}}</span>
+        </div>
+      </ng-template>
+    </section>
+    <!-- plans container ends -->
+  </ng-container>
+
+  <ng-container *ngSwitchCase="PlansSubscriptionsStateName.PlansSubscriptionsStateProcessing">
+    <ngx-skeleton-loader class="main-heading-skeleton" count="1"></ngx-skeleton-loader>
+
+    <ngx-skeleton-loader class="subheading-skeleton section-padding" count="1"></ngx-skeleton-loader>
+    <ngx-skeleton-loader count="1" [theme]="{
+            'height.px':'120'
+          }"></ngx-skeleton-loader>
+
+    <ngx-skeleton-loader class="subheading-skeleton section-padding" count="1"></ngx-skeleton-loader>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-12 mb-4" *ngFor="let item of [].constructor(4)">
+        <ngx-skeleton-loader count="1" [theme]="{
+            'height.px':'230'
+          }"></ngx-skeleton-loader>
+      </div>
+    </div>
+
+  </ng-container>
+
+  <ng-container *ngSwitchCase="PlansSubscriptionsStateName.PlansSubscriptionsStateDisconnected">
+    <app-no-connection></app-no-connection>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="PlansSubscriptionsStateName.PlansSubscriptionsStateError">
+    <app-try-again (onTryAgain)="onRetry()"></app-try-again>
+  </ng-container>
+</ng-container>

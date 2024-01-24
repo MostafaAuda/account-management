@@ -1,0 +1,19 @@
+<svg id="icn_remove" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" viewBox="0 0 15 15">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.026" y1="0.029" x2="0.976" y2="0.981" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e64747"/>
+      <stop offset="1" stop-color="#1a66ff"/>
+    </linearGradient>
+  </defs>
+  <rect id="Rectangle_17696" data-name="Rectangle 17696" width="15" height="15" rx="3" opacity="0.998" fill="url(#linear-gradient)"/>
+  <g id="vuesax_twotone_trash" data-name="vuesax/twotone/trash" transform="translate(2.813 2.813)">
+    <g id="trash">
+      <path id="Vector" d="M7.031.2C5.73.066,4.422,0,3.117,0A23.074,23.074,0,0,0,.8.117L0,.2" transform="translate(1.172 2.141)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="Vector-2" data-name="Vector" d="M0,1.16.086.648C.148.277.2,0,.855,0H1.879c.66,0,.711.293.77.652l.086.508" transform="translate(3.32 0.781)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" opacity="0.999"/>
+      <path id="Vector-3" data-name="Vector" d="M5.352,0,5.1,3.934c-.043.613-.078,1.09-1.168,1.09H1.422C.332,5.023.3,4.547.254,3.934L0,0" transform="translate(2.012 3.57)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="Vector-4" data-name="Vector" d="M0,0H1.3" transform="translate(4.035 6.445)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" opacity="0.999"/>
+      <path id="Vector-5" data-name="Vector" d="M0,0H1.953" transform="translate(3.711 4.883)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" opacity="0.999"/>
+      <path id="Vector-6" data-name="Vector" d="M0,0H9.375V9.375H0Z" fill="none" opacity="0"/>
+    </g>
+  </g>
+</svg>

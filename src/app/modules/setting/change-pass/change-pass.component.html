@@ -1,0 +1,117 @@
+<ng-container *ngIf="viewState.name == changePasswordStatesName.ConnectedState">
+  <app-page-title [title]="'Change password' | translate"></app-page-title>
+  <section>
+    <form [formGroup]="createPasswordForm" (ngSubmit)="createPasswordSubmit(createPasswordForm)"
+      *ngIf="createPasswordForm">
+      <!----------------------oldPassword------------------->
+
+      <div class="form-input-group">
+        <label for="oldPassword"> {{" Old Password" | translate}} </label>
+        <div class="input-with-image">
+          <img class="input-icon" id="oldPassword" src="assets/icons/icn_lock_password.svg"
+            [alt]="'User icon' | translate">
+          <input id="oldPassword" [type]="showOldPassword ? 'password' : 'text'" class="form-control"
+            placeholder=" {{'Enter your old password' | translate}} " formControlName="oldPassword"
+            autocomplete="current-password" [ngClass]="{ 'is-invalid':( createPasswordFormControls['oldPassword'].dirty )
+            &&  createPasswordFormControls['oldPassword'].errors}">
+
+
+          <a class="card-placeholder__img" (click)="onShowOldPassword()"
+            *ngIf="createPasswordFormControls['oldPassword'].value?.length">
+            <img [src]="showOldPassword ? 'assets/icons/vuesax-bold-eye-slash.svg' : 'assets/icons/vuesax-bold-eye.svg'"
+              [alt]="showOldPassword ? 'Hide Password Icon' : 'Show Password Icon'">
+          </a>
+
+          <small
+            *ngIf="createPasswordFormControls['oldPassword'].errors && createPasswordFormControls['oldPassword'].dirty "
+            class="invalid-feedback">
+            <span *ngIf=" createPasswordFormControls['oldPassword']?.errors?.['required']">
+              {{'Password is required' | translate}}
+            </span>
+          </small>
+        </div>
+
+      </div>
+
+      <!----------------------./oldPassword------------------->
+
+
+      <!-----------------------newPassword-------------------->
+      <div class="form-input-group">
+        <label for="newPassword">{{" New Password"| translate}}</label>
+        <div class="input-with-image">
+          <img class="input-icon" src="assets/icons/icn_lock_password.svg" [alt]="'User icon' | translate">
+          <input [type]="showNewPassword ? 'password' : 'text'" class="form-control" id="newPassword"
+            autocomplete="new-password" placeholder="{{'Enter your new password' | translate}}"
+            formControlName="newPassword"
+            [ngClass]="{ 'is-invalid': createPasswordFormControls['newPassword'].errors && createPasswordFormControls['newPassword'].value?.length}">
+
+          <a class="card-placeholder__img" (click)="onShowNewPassword()"
+            *ngIf="createPasswordFormControls['newPassword'].value?.length">
+            <img [src]="showNewPassword ? 'assets/icons/vuesax-bold-eye-slash.svg' : 'assets/icons/vuesax-bold-eye.svg'"
+              [alt]="showNewPassword ? 'Hide Password Icon' : 'Show Password Icon'">
+          </a>
+
+          <small
+            *ngIf="createPasswordFormControls['newPassword'].errors && createPasswordFormControls['newPassword'].value?.length"
+            class="invalid-feedback">
+            <span *ngIf="createPasswordFormControls['newPassword'].errors['pattern']">
+              {{'Password must contain at least one number' | translate}}
+            </span>
+            <span *ngIf="createPasswordFormControls['newPassword'].errors['pattern']">
+              {{'Password must contain upper & lower case letters' | translate}}
+            </span>
+            <span *ngIf="createPasswordFormControls['newPassword'].errors['minlength']">
+              {{'Password must contain at least 8 characters' | translate}}
+            </span>
+          </small>
+        </div>
+      </div>
+
+      <!-----------------------./newPassword-------------------->
+
+
+      <!-----------------------confirmPassword-------------------->
+      <div class="form-input-group">
+        <label for="confirmPassword"> {{" Confirm New Password" | translate}} </label>
+        <div class="input-with-image">
+          <img class="input-icon" src="assets/icons/icn_lock_password.svg" [alt]="'User icon' | translate">
+          <input id="confirmPassword" [type]="showConfirmPassword ? 'password' : 'text'" class="form-control"
+            placeholder="{{'Re-enter your new password' | translate}}" formControlName="confirmPassword"
+            [ngClass]="{ 'is-invalid': createPasswordFormControls['confirmPassword'].errors  &&  createPasswordFormControls['confirmPassword'].value?.length}">
+
+          <a class="card-placeholder__img" (click)="onShowConfirmPassword()"
+            *ngIf="createPasswordFormControls['confirmPassword'].value?.length">
+            <img
+              [src]="showConfirmPassword ? 'assets/icons/vuesax-bold-eye-slash.svg' : 'assets/icons/vuesax-bold-eye.svg'"
+              [alt]="showConfirmPassword ? 'Hide Password Icon' : 'Show Password Icon'">
+          </a>
+
+          <small *ngIf="createPasswordFormControls['confirmPassword'].errors " class="invalid-feedback">
+            <span *ngIf="createPasswordFormControls['confirmPassword'].errors['notMatching']">
+              {{'Passwords are not matching' | translate}}
+            </span>
+
+          </small>
+        </div>
+
+      </div>
+
+      <!-----------------------./confirmPassword-------------------->
+
+
+
+      <div class="button-container">
+        <button class="btn btn--gradient" type="submit" [disabled]="!createPasswordForm.valid || is_submitting">
+          {{ "Save" | translate }}
+        </button>
+        <a class="text-decoration-underline" [routerLink]="[ '/setting' ]"> {{ "cancel" | translate }}</a>
+      </div>
+    </form>
+
+  </section>
+</ng-container>
+
+<ng-container *ngIf="viewState.name == changePasswordStatesName.DisconnectedState;">
+  <app-no-connection></app-no-connection>
+</ng-container>

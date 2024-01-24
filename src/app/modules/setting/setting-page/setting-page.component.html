@@ -1,0 +1,127 @@
+<ng-container *ngIf="viewState.name != settingStatesName.DisconnectedState">
+  <app-page-title [title]="'Setting' | translate"></app-page-title>
+
+  <section class="general-settings">
+    <!---------------------language-grp-------------------------------->
+    <div class="group pt-0">
+      <h4 class="section-heading">{{"General settings" | translate}}</h4>
+
+      <div class="lang-grp__content">
+        <div class="language-text">
+          <div class="link_img-container">
+            <img src="assets/icons/icn_language_setting.svg" [alt]="'Translate Icon' | translate">
+          </div>
+          <span>{{'Language' | translate}}</span>
+        </div>
+
+        <a class="btn btn--gradient switch-lang__text" *ngIf="viewState.name == settingStatesName.EnLang"
+          (click)="changeLang(appLang.ar)">
+          {{'Switch to عربي' | translate}}
+        </a>
+        <a class="btn btn--gradient switch-lang__text" *ngIf="viewState.name == settingStatesName.ArLang"
+          (click)="changeLang(appLang.en)">
+          {{'Switch to English' | translate}}
+        </a>
+      </div><!--./lang-grp__content-->
+    </div>
+    <!---------------------./language-grp------------------------------>
+
+
+    <!---------------------social-account-grp--------------------------->
+    <div class="group">
+      <h4 class="section-heading">{{"Connected accounts" | translate}}</h4>
+      <div class="social-account__links">
+        <a class="btn social-account-link" (click)="fbConnect()">
+          <span class="social-link__img-container">
+            <img src="assets/icons/icn_facebook_setting.svg" [alt]="'Facebook icon' | translate">
+          </span>
+          <span> {{"Facebook Connected" | translate}} </span>
+        </a>
+        <a class="btn social-account-link link-google" (click)="googleConnect()">
+          <span class="social-link__img-container">
+            <img src="assets/icons/icn_google_setting.svg" [alt]="'Google icon'|translate">
+          </span>
+          <span> {{"Google Account Connected" | translate}} </span>
+        </a>
+        <a class="btn social-account-link" (click)="appleConnect()">
+          <span class="social-link__img-container">
+            <img src="assets/icons/icn_apple_setting.svg" [alt]="'Apple icon' | translate"></span>
+          <span> {{"Apple Account Connected"| translate}} </span>
+        </a>
+      </div>
+    </div>
+    <!---------------------./social-account-grp-------------------------->
+
+
+    <!-----------------------account-setting----------------------------->
+    <div class="group">
+      <h4 class="section-heading"> {{"Account setting" | translate}} </h4>
+      <ul class="account-setting__actions">
+        <li>
+          <a class="account-setting_action" (click)="updateInfo()">
+            <span class="link_img-container">
+              <img src="assets/icons/icn_update_info.svg" [alt]="'User update icon' | translate">
+            </span>
+            <span class="fw-semibold">
+              {{"Update personal information" | translate}}
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="account-setting_action" (click)="changePassword()">
+            <span class="link_img-container">
+              <img src="assets/icons/icn_change_password.svg" [alt]="'Change password icon' | translate">
+            </span>
+            <span class="fw-semibold"> {{"Change password" | translate}} </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!----------------------./account-setting---------------------------->
+
+
+    <!-----------------------about-twist--------------------------------->
+    <div class="about-list-grp group">
+      <h4 class="section-heading">{{"About twist" | translate}}</h4>
+      <ul class="about-list">
+        <li>
+          <a class="about-link">
+            <span class="link_img-container">
+              <img src="assets/icons/icn_terms_condition.svg" [alt]="'Terms icon' | translate">
+            </span>
+            <span class="fw-semibold" (click)="openTermsDialog()">
+              {{"Terms and condition" | translate}}
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="about-link">
+            <span class="link_img-container">
+              <img src="assets/icons/icn_privacy_policy.svg" [alt]="'Privacy policy icon' | translate">
+            </span>
+            <span class="fw-semibold" (click)="openPrivacyDialog()">
+              {{"Privacy and policy" | translate}}
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-----------------------./about-twist------------------------------->
+
+
+
+    <a class="sign-out" (click)="signOut()">
+      <span class="link_img-container">
+        <img [alt]="'Sign out btn' | translate" [src]="'assets/icons/icn_signout.svg'">
+      </span>
+      <span class="fw-semibold">
+        {{"Sign Out" | translate}}
+      </span>
+    </a>
+
+  </section>
+</ng-container>
+
+<ng-container *ngIf="viewState.name == settingStatesName.DisconnectedState">
+  <app-no-connection></app-no-connection>
+</ng-container>

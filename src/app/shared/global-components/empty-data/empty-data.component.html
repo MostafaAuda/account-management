@@ -1,0 +1,7 @@
+<div class="empty-data">
+  <div class="empty-data__img">
+    <img loading="lazy" src="assets/imgs/warning-sign.svg" [alt]="'Empty Data Warning' | translate">
+  </div>
+  <h3 *ngIf="Title">{{Title}}</h3>
+  <p *ngIf="Description">{{Description}}</p>
+</div>
