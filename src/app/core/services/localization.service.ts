@@ -1,10 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { DOCUMENT } from '@angular/common';
-import {
-  AppLang,
-  LocalizationServiceContract,
-} from '../bloc/.contracts/services/localization.service-contract';
+import { AppLang, LocalizationServiceContract } from '../bloc/.contracts/services/localization.service-contract';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { LocalStorageService } from './local-storage.service';
 @Injectable({
@@ -15,8 +12,7 @@ export class LocalizationService implements LocalizationServiceContract {
   private userLang: string = 'en';
   private acceptedLangs = ['ar', 'en'];
 
-  private currentLangStream: BehaviorSubject<AppLang> =
-    new BehaviorSubject<AppLang>(AppLang.en);
+  private currentLangStream: BehaviorSubject<AppLang> = new BehaviorSubject<AppLang>(AppLang.en);
   //#endregion Private Data Members
 
   //#region  Public Data Members
@@ -36,7 +32,7 @@ export class LocalizationService implements LocalizationServiceContract {
 
   //#region Public Methods
   public init(): void {
-    this.userLang = this._localStorageService.getUserLang();
+    this.userLang = 'en';
     this.setUserLang(this.userLang);
   }
 
